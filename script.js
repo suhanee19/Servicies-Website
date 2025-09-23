@@ -75,7 +75,7 @@ cards.forEach(card => {
 
     const resetAutoPlay = () => {
         clearInterval(autoPlayInterval);
-        setTimeout(startAutoPlay, 10000); // Restart after 10 seconds of user interaction
+        setTimeout(startAutoPlay, 15000); // Restart after 10 seconds of user interaction
     };
 
     cards.forEach((card, index) => {
@@ -86,23 +86,6 @@ cards.forEach(card => {
         });
     });
 
-    // --- Bento Box Auto-Scroll Logic ---
-    const bentoContainer = document.querySelector('.bento-container');
-    if (bentoContainer) {
-        let scrollSpeed = 0.5; // Adjust this value to change scroll speed
-        let scrollPosition = 0;
-
-        function autoScroll() {
-            scrollPosition += scrollSpeed;
-            if (scrollPosition >= bentoContainer.scrollWidth - bentoContainer.clientWidth) {
-                scrollPosition = 0; // Reset to the beginning
-            }
-            bentoContainer.scrollLeft = scrollPosition;
-            requestAnimationFrame(autoScroll);
-        }
-
-        autoScroll();
-    }
     
     // Initial call to start the hero slider
     updateSlider(currentIndex);
@@ -116,7 +99,7 @@ cards.forEach(card => {
     autoPlayInterval = setInterval(() => {
       currentIndex++;
       if (currentIndex >= originalCards.length) {
-        cardScroller.style.transition = 'none';
+        cardScroller.style.transition = 'transform 0.5s ease-in-out';
         currentIndex = 0;
         cardScroller.style.transform = `translateX(0px)`;
 
@@ -205,6 +188,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- (Your existing homepage JS code goes here) ---
-    // ...
 });

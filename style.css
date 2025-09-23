@@ -504,7 +504,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     grid-auto-flow: dense;
 }
@@ -518,8 +518,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
+    box-shadow: #5c8a1395 0px 0px 8px, #00000094 0px 0px 15px;
 }
-
+.bento-box:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 0 15px var(--accent-teal);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}   
 .large-box {
     grid-column: span 2;
 }
@@ -576,7 +581,7 @@ body.dark-theme {
 
 /* Specific Dark Theme Adjustments */
 body.dark-theme .navbar {
-    background-color: #00000098;
+    background-color: #bfb8b898;
 }
 
 body.dark-theme .logo img {
