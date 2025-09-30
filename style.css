@@ -43,6 +43,8 @@ body,
     box-sizing: border-box;
 }
 
+
+
 /* ------------------ COLOR PALETTE & TYPOGRAPHY ------------------ */
 :root {
     --primary-dark: #2c3e50; /* A dark, deep color for text and nav */
