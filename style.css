@@ -547,7 +547,7 @@ footer {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 64px;
+    height: 69px;
     display: flex;
     align-items: center;
     background: rgba(255,255,255,0.08);
@@ -567,8 +567,9 @@ footer {
     height: 44px;
     width: auto;
     margin: 0;
-    padding: 0;
+    
     display: block;
+
 }
 .navbar-right {
     display: flex;
@@ -595,6 +596,7 @@ footer {
     height: 50px;   /* or your preferred size */
     width: auto;
     margin-left: 16px;
+    
 }
         .nav-links > li {
             margin: 0 15px; /* Use margin for spacing instead of gap */

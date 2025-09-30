@@ -6,7 +6,7 @@
     <title>Blog - Happiness Plans</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -29,62 +29,6 @@
             color: inherit;
         }
 
-        /* --- Header & Navigation --- */
-        header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo img {
-            height: 60px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 35px;
-        }
-
-        .nav-links a {
-            color: #333333;
-            font-weight: 600;
-            padding-bottom: 5px;
-            transition: color 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: #d4af37;
-        }
-        
-        .nav-links a.active {
-            border-bottom: 3px solid #5cb85c;
-            color: #1d2b4a;
-        }
-        
-        .hamburger {
-             display: none;
-             color: #333;
-             font-size: 30px;
-             cursor: pointer;
-        }
-        
         /* --- Blog Hero Section --- */
         .blog-hero {
             position: relative;
@@ -328,7 +272,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
-                    <a href="#">Offerings<i class="fas fa-chevron-down"></i></a>
+                    <a>Offerings<i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="travel.html">Holiday</a></li>
                         <li><a href="fleet.html">Fleets</a></li>
@@ -339,7 +283,7 @@
 
                 <li class="dropdown">
 
-                    <a href="#">Discover More<i class="fas fa-chevron-down"></i></a>
+                    <a>Discover More<i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="review.html">Reviews</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -448,20 +392,9 @@
         <p>© 2025 Happiness Plans. All Rights Reserved.</p>
     </footer>
 
-    <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>  
-    </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+   
+<script src="script.js"></script>
+
 </body>
 </html>

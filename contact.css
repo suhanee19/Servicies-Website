@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap');
 
+/* --- GENERAL STYLES --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: 'Merriweather', display;
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   background: #f5f6fa;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Hero */
+/* --- HERO SECTION --- */
 .hero2 {
   position: relative;
   background: url('assets/images/about.jpg') no-repeat center center/cover;
-  height: 60vh;
+  height: 50vh; /* Adjusted for better balance on all screens */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,49 +28,45 @@ body {
 
 .hero2 .overlay {
   position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 35, 66, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10, 35, 66, 0.6); /* navy overlay */
 }
 
 .hero2 h1 {
-  position: relative;
-    font-family: 'Merriweather', display;
-font-size: 3.5rem;
- margin-bottom: 1rem;
- font-style: italic;
- text-shadow: 2px 2px 9px gray;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
   color: #fff;
   letter-spacing: 2px;
-  z-index: 2;
   animation: fadeIn 1.5s ease;
 }
+
 .hero2 p {
-  position: relative;
   font-size: 1.2rem;
   font-style: italic;
   color: #fff;
-  z-index: 2;
   animation: fadeIn 1.9s ease;
 }
 
-/* Contact section */
+/* --- CONTACT SECTION --- */
 .contact-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 70px 10%;
+  max-width: 1400px; /* Added max-width for very large screens */
+  margin: 0 auto;
 }
 
 .contact-info h2 {
-  font-family: 'Merriweather', display;
+  font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #0a2342; /* navy */
+  color: #0a2342;
 }
 
 .contact-info p {
@@ -81,16 +78,21 @@ font-size: 3.5rem;
 .contact-info ul {
   list-style: none;
   margin: 20px 0;
+  padding: 0;
 }
 
 .contact-info ul li {
-  margin: 12px 0;
+  margin: 15px 0;
   font-size: 1rem;
+  display: flex; /* Added for better icon alignment */
+  align-items: center;
 }
 
 .contact-info ul li i {
-  margin-right: 12px;
-  color: #d4af37; /* gold accent */
+  margin-right: 15px;
+  color: #d4af37;
+  width: 20px; /* Ensures consistent alignment */
+  text-align: center;
   transition: 0.3s;
 }
 
@@ -98,14 +100,22 @@ font-size: 3.5rem;
   transform: scale(1.2);
 }
 
-/* Contact form */
+/* --- RESPONSIVE GOOGLE MAP --- */
+.contact-info iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* --- CONTACT FORM --- */
 .contact-form {
   background: #fff;
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(10,35,66,0.15);
   animation: slideUp 1.2s ease;
-  border-top: 4px solid #d4af37; /* gold accent */
+  border-top: 4px solid #d4af37;
 }
 
 .contact-form label {
@@ -150,7 +160,7 @@ font-size: 3.5rem;
   background: linear-gradient(135deg, #142850, #0a2342);
 }
 
-/* Socials */
+/* --- SOCIALS --- */
 .socials {
   margin-top: 25px;
 }
@@ -165,10 +175,10 @@ font-size: 3.5rem;
 
 .socials a:hover {
   color: #d4af37;
-  transform: scale(1.2);
+  transform: translateY(-3px);
 }
 
-/* Animations */
+/* --- ANIMATIONS --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -179,19 +189,41 @@ font-size: 3.5rem;
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-@media(max-width: 900px) {
+/* =================================== */
+/* --- RESPONSIVE MEDIA QUERIES --- */
+/* =================================== */
+
+/* --- TABLET VIEW --- */
+@media(max-width: 992px) {
   .contact-section {
     grid-template-columns: 1fr;
-    padding: 50px 8%;
+    padding: 60px 8%;
+    gap: 50px; /* Increased gap for stacked layout */
   }
 
-  .hero h1 {
+  .hero2 h1 {
     font-size: 3rem;
+  }
+  
+  .hero2 p {
+    font-size: 1.1rem;
   }
 }
 
-@media(max-width: 500px) {
+/* --- MOBILE VIEW --- */
+@media(max-width: 576px) {
+  .contact-section {
+    padding: 50px 5%;
+  }
+
+  .hero2 {
+    height: 40vh;
+  }
+
+  .hero2 h1 {
+    font-size: 2.5rem;
+  }
+
   .contact-form {
     padding: 25px;
   }
