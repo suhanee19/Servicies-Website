@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - Happiness Plans</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Header.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Styles for the Careers Page */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Hero Section Styling */
+    .careers-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/team.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .careers-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .careers-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Job Listings Section */
+    .job-listings {
+      padding: 80px 20px;
+    }
+    
+    .section-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .section-heading p {
+        font-size: 1.1rem;
+        color: #666;
+    }
+
+    .job-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Individual Job Card Styling */
+    .job-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #007bff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .job-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .job-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .detail-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .detail-item i {
+        margin-right: 8px;
+        color: #007bff;
+    }
+
+    .job-card .description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background-color: #0056b3;
+    }
+    
+  </style>
+</head>
+<body>
+
+   <header>
+     <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/LOGO.png" alt="Happiness Plans">
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Offerings<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="travel.html">Holiday</a></li>
+                        <li><a href="fleet.html">Fleets</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About </a></li>
+
+                <li class="dropdown">
+
+                    <a href="#">Discover More<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="review.html">Reviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!" target="_blank" class="nav-cta-button">
+                <i class="fab fa-whatsapp"></i> 8224803424
+            </a>
+        </nav>
+      
+
+
+ </header>
+  <main>
+    <section class="careers-hero">
+      <h1>Join Our Team</h1>
+      <p>Be a part of a passionate team dedicated to crafting unforgettable experiences. We believe in innovation, collaboration, and creating happiness.</p>
+    </section>
+
+    <section class="job-listings">
+        <div class="section-heading">
+            <h2>Available Positions</h2>
+            <p>Find your next great opportunity with Happiness Plans.</p>
+        </div>
+      
+        <div class="job-container">
+            <div class="job-card">
+              <h3>Travel Consultant</h3>
+              <div class="job-details">
+                  <div class="detail-item"><i class="fas fa-map-marker-alt"></i> Indore, India</div>
+                  <div class="detail-item"><i class="fas fa-briefcase"></i> Full-time</div>
+                  <div class="detail-item"><i class="fas fa-building"></i> Travel Department</div>
+              </div>
+              <p class="description">Design and manage bespoke travel itineraries for our clients. A passion for travel and excellent customer service skills are a must.</p>
+              <a href="mailto:info@happinessplans.com?subject=Application for Travel Consultant" class="apply-btn">Apply Now</a>
+            </div>
+
+            <div class="job-card">
+              <h3>Event Coordinator</h3>
+              <div class="job-details">
+                  <div class="detail-item"><i class="fas fa-map-marker-alt"></i> Indore, India</div>
+                  <div class="detail-item"><i class="fas fa-briefcase"></i> Full-time</div>
+                  <div class="detail-item"><i class="fas fa-building"></i> Events Department</div>
+              </div>
+              <p class="description">Plan and execute corporate and private events from concept to completion. Requires strong organizational skills and creativity.</p>
+              <a href="mailto:info@happinessplans.com?subject=Application for Event Coordinator" class="apply-btn">Apply Now</a>
+            </div>
+
+            <div class="job-card">
+              <h3>Digital Marketing Intern</h3>
+              <div class="job-details">
+                  <div class="detail-item"><i class="fas fa-map-marker-alt"></i> Remote / Indore</div>
+                  <div class="detail-item"><i class="fas fa-briefcase"></i> Internship (3 Months)</div>
+                  <div class="detail-item"><i class="fas fa-building"></i> Marketing Department</div>
+              </div>
+              <p class="description">Assist our marketing team with social media management, content creation, and SEO strategies to grow our online presence.</p>
+              <a href="mailto:info@happinessplans.com?subject=Application for Digital Marketing Intern" class="apply-btn">Apply Now</a>
+            </div>
+            
+            </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Happiness Plans</h3>
+        <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
+        <p>Email: info@happinessplans.com</p>
+        <p>Phone: 9109135533, 9109135530</p>
+      </div>
+      <div class="footer-social">
+        <h2>Follow Us</h2>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in" target="_blank" class="linkedin">
+            <img src="assets/images/LinkedIn.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/happiness.plans/?hl=en" target="_blank" class="instagram">
+            <img src="assets/images/Logo Instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/happinessplans" target="_blank" class="facebook">
+            <img src="assets/images/Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://x.com/HappinessPlans" target="_blank" class="twitter">
+            <img src="assets/images/Icon.png" alt="Twitter">
+          </a>
+          <a href="https://www.youtube.com/@happinessplansindore" target="_blank" class="youtube">
+            <img src="assets/images/Logo YouTube.png" alt="YouTube">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!%20I%20would%20like%20to%20know%20more%20about%20your%20travel%20and%20transportation%20services." target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <script src="header.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

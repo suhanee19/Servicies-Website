@@ -534,38 +534,66 @@ footer {
 
 
 
-
+.slider-section, .hero-image, .main-content {
+    margin-top: 80px; /* Same as navbar height */
+}
 
 /* ------------------ NAVBAR ------------------ */
 /* --- Root Variables --- */
 .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1800px;
-           background: transparent;
-            margin: 0 auto;
-            box-shadow: none;
-            background-color: transparent;
-             background: rgba(255,255,255,0.08) !important;
+             position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: none;
-        }
+    z-index: 1000;
+    padding: 0 2vw;
+    justify-content: space-between;}
+.logo {
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+}
 
+.logo img {
+    height: 44px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-left: auto; /* push to right */
+}
         .logo img {
             height: 50px; /* Adjusted size slightly */
             display: block;
-            margin-left: 7px;
-            margin-right: 690px;
+            margin-right: 50px;
+            padding-left: 0px;t
+
         }
 
         .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    list-style: none;
+}
 
+.logo img {
+    height: 50px;   /* or your preferred size */
+    width: auto;
+    margin-left: 16px;
+}
         .nav-links > li {
             margin: 0 15px; /* Use margin for spacing instead of gap */
         }

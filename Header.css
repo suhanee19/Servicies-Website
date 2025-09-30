@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
         :root {
             --card-width: 280px;
@@ -9,10 +10,13 @@
             --animation-duration: 1.6s; /* Shorter for a snappier feel */
             --smoother-timing: cubic-bezier(0.25, 0.1, 0.23, 1);
         }
+
         .slider-section {
+            width: 100vh;
             min-height: 100vh;
             position: relative;
             width: 100%;
+            
             height: 500px; /* Set your desired section height */
             overflow: hidden;
             padding-left: 700px;
@@ -140,21 +144,23 @@
     bottom: 5vh;
     margin-bottom: 170px;
     z-index: 2;
-    color: #b0a4a4a6;
+    color: #ffffffa6;
     text-align: left;
     pointer-events: none;
     width: auto;
     font-size: 1rem;
     user-select: none;
-    font-style: italic;
+    font-family: April-Fatface;
         }
 
         .background-card-text .card-title {
-            font-size: 5rem;
+            font-size: 6rem;
             font-weight: bold;
             font-style: italic;
+            font-family: April Fatface;
+
             text-shadow: #ecc9c9 1px 1px 2px, #ffa7a7 0 0 1em, #b7b7b7 0 0 0.2em;
-            color: #181818;
+            color: #ffffff;
             transform-origin: bottom left;
         }
 
