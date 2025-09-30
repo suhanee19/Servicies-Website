@@ -1,0 +1,180 @@
+
+
+        :root {
+            --card-width: 280px;
+            --card-height: 330px;
+            --card-spacing: 15px;
+            --font-color: #b7b7b7;
+            --bg-color: #abc7dc;
+            --animation-duration: 1.6s; /* Shorter for a snappier feel */
+            --smoother-timing: cubic-bezier(0.25, 0.1, 0.23, 1);
+        }
+        .slider-section {
+            min-height: 100vh;
+            position: relative;
+            width: 100%;
+            height: 500px; /* Set your desired section height */
+            overflow: hidden;
+            padding-left: 700px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;}
+        .slider-wrapper{
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--bg-color);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            transition: background-image var(--animation-duration) var(--smoother-timing);
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            /* Adjusted width to show one full card, a second full card, and a third half card, with spacing in between */
+            width: calc(1.1 * var(--card-width) + 2 * var(--card-spacing) + 1.5 * var(--card-width));
+            height: 100%;
+            padding-left: 550px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Add perspective for a 3D effect on the cards themselves */
+            perspective: 1500px;
+        }
+
+        .card {
+            position: absolute;
+            width: var(--card-width);
+            height: var(--card-height);
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            color: var(--font-color);
+            padding-top: 10px;
+            padding-right: 110px;
+            color: #f6f6f6;
+            overflow: hidden;
+            font-weight: 1000;
+            font-size: 1.5rem;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.658);
+            transition: transform var(--animation-duration) var(--smoother-timing),
+                        opacity var(--animation-duration) var(--smoother-timing),
+                        z-index 0s var(--animation-duration);
+        }
+
+        
+        .card-content {
+            position: absolute;
+            bottom: 3px;
+            left: 3px;
+            right: 3px;
+            color: #e0dbdb;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0.1rem;
+            color: #ede8e8;
+            text-shadow: 2px 2px 4px rgba(249, 241, 241, 0.5);
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* --- CARD BACKGROUNDS --- */
+        .card-holiday {
+            background-image: url('assets/images/event.jpg');
+            
+        }
+        .card-event {
+            background-image: url('assets/images/beach.jpg');
+        }
+
+        .card-fleet {
+            background-image: url('assets/images/Frame 44.png');
+        }
+
+        /* --- CARD STATES --- */
+        .card.active {
+            transform: translateX(0) scale(1.1) rotateY(0deg);
+            opacity: 1;
+            z-index: 3;
+        }
+
+        .card.next {
+            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing))) scale(0.95) rotateY(-5deg);
+            opacity: 0.8;
+            z-index: 2;
+        }
+
+        .card.next-next {
+            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing))) scale(0.9) rotateY(-10deg);
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .card.leaving {
+            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing) + 100px)) scale(0.8) rotateY(-15deg);
+            opacity: 0;
+            z-index: -0.1;
+        }
+
+        /* --- BACKGROUND TEXT --- */
+        .background-card-text {
+            position: absolute;
+    left: 3vw;
+    bottom: 5vh;
+    margin-bottom: 170px;
+    z-index: 2;
+    color: #b0a4a4a6;
+    text-align: left;
+    pointer-events: none;
+    width: auto;
+    font-size: 1rem;
+    user-select: none;
+    font-style: italic;
+        }
+
+        .background-card-text .card-title {
+            font-size: 5rem;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: #ecc9c9 1px 1px 2px, #ffa7a7 0 0 1em, #b7b7b7 0 0 0.2em;
+            color: #181818;
+            transform-origin: bottom left;
+        }
+
+        .background-card-text .card-subtitle {
+            font-size: 1.8rem;
+            font-weight: 400;
+            transform-origin: bottom left;
+        }
+
+        .background-card-text .card-title,
+        .background-card-text .card-subtitle {
+            transition: opacity var(--animation-duration) var(--smoother-timing), transform var(--animation-duration) var(--smoother-timing);
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        /* New class for fade-out/in text transition */
+        .background-card-text.fade .card-title,
+        .background-card-text.fade .card-subtitle {
+            opacity: 0;
+            transform: translateY(30px) scale(1) perspective(500px) rotateX(10deg);
+        }
+

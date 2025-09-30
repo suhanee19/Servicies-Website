@@ -5,239 +5,330 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happiness Plans</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
   <header>
-  <nav class="navbar">
-   <div class="logo">
-    <img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px">
-   </div>
-   <div class="hamburger">&#9776;</div>
+     <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/LOGO.png" alt="Happiness Plans">
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Offerings<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="travel.html">Holiday</a></li>
+                        <li><a href="fleet.html">Fleets</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About </a></li>
 
-   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="travel.html">Travel</a></li>
-    <li><a href="fleet.html">Fleet</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="contact.html">Contact</a></li>
-   </ul>
-       <button id="theme-toggle" class="theme-toggle">🌙</button>
+                <li class="dropdown">
 
-  </nav>
- </header>
+                    <a href="#">Discover More<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="review.html">Reviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!" target="_blank" class="nav-cta-button">
+                <i class="fab fa-whatsapp"></i> 8224803424
+            </a>
+        </nav>
+      
 
- <div class="head">
-  <div class="slider-container">
-    <div class="background-slide active" style="background-image: url('assets/images/beach.jpg');"></div>
-    <div class="background-slide" style="background-image: url('assets/images/event.jpg');"></div>
-    <div class="background-slide" style="background-image: url('assets/images/Frame 44.png');"></div>
-  </div>
 
-  <div class="content-overlay">
-    <div class="text-content active">
-      <h1>EVENTS</h1>
-      <p>From intimate gatherings to grand celebrations, we craft experiences you’ll never forget.</p><br>
+ 
+<section class="slider-section">
+    <div class="background-card-text">
+        <div class="card-title"></div>
+        <div class="card-subtitle"></div>
     </div>
-    <div class="text-content">
-      <h1>HOLIDAY</h1>
-      <p>Escape, explore, enjoy : holidays made easy.</p><br>
+    <div class="slider-container">
+        <div class="card card-holiday">Holidays</div>
+        <div class="card card-event">Events</div>
+        <div class="card card-fleet">Fleets</div>
     </div>
-    <div class="text-content">
-      <h1>FLEETS</h1>
-      <p>We combine safety, efficiency, and reliability to offer fleet services that you can trust for every journey, every time.</p><br>
-    </div>
-  </div>
+</section>
 
-  <div class="card-scroller-container">
-    <div class="card-scroller">
-     <div class="card" data-index="0">
-        <img src="assets/images/Frame 44.png" alt="Fleets">
-        <p>Fleets</p>
-     </div>
-      <div class="card" data-index="1">
-        <img src="assets/images/event.jpg" alt="Holiday">
-        <p>Holiday</p>
-      </div>
-      <div class="card" data-index="2">
-        <img src="assets/images/beach.jpg" alt="Events">
-        <p>Events</p>
-      </div>
-      <div class="card" data-index="5">
-        <img src="assets/images/Frame 44.png" alt="Fleets">
-        <p>Fleets</p>
-      </div>
-      <div class="card" data-index="4">
-        <img src="assets/images/event.jpg" alt="Events">
-        <p>Events</p>
-      </div>
-      <div class="card" data-index="3">
-        <img src="assets/images/beach.jpg" alt="Holiday">
-        <p>Holiday</p>
-      </div>
-    </div>
-  </div>
-</div>
+</header>
+
+ 
     <section class="travel-diaries home-section">
    <div class="section-heading">
-    <h2>Travel Diaries</h2>
-    <p>— Explore our handpicked destinations —</p>
+    <h2>Our Offerings</h2>
+    <p></p>
    </div>
    <div class="home-grid">
+    <a href="travel.html">
     <div class="home-card">
      <img src="assets/images/beaches.jpg" alt="Goa Beaches">
      <div class="home-card-info">
-      <h3>Goa Beaches</h3>
-      <p>Golden sands & vibrant nightlife.</p>
+      <h3>Holidays Packages</h3>
      </div>
     </div>
-    <div class="home-card">
-     <img src="assets/images/kerala.jpg" alt="Kerala Backwaters">
+    </a>
+    <a href="fleet.html"><div class="home-card">
+     <img src="assets/images/Artboard 1 copy 14.jpg" alt="Kerala Backwaters">
      <div class="home-card-info">
-      <h3>Kerala Backwaters</h3>
-      <p>Serene boat rides & lush green landscapes.</p>
+      <h3>Fleets Management</h3>
      </div>
-    </div>
+    </div></a>
+    <a href="events.html">
     <div class="home-card">
-     <img src="assets/images/shimla.jpg" alt="shimla">
+     <img src="assets/images/corporateEvent.jpg" alt="Mandu">
      <div class="home-card-info">
-      <h3>Shimla</h3>
-      <p>Discover the breathtaking beauty of Shimla in winter and summer! From snow-capped mountains to lush green valleys.</p>
+      <h3>Event Management</h3>
      </div>
     </div>
+    </a>
+    <!-- <a href="Visa.html">
     <div class="home-card">
-     <img src="assets/images/mandu.jpg" alt="Mandu">
+     <img src="assets/images/visa.jpg" alt="Visa">
      <div class="home-card-info">
-      <h3>Mandu</h3>
-      <p> A city located in the Malwa region of Madhya Pradesh, is the epitome of architectural excellence.</p>
+      <h3>Visa assistance</h3>
+      <p>Visa assistance, made easy.</p>
      </div>
     </div>
+    </a> -->
    </div>
+   
+     
+<section class="reviews-section">
+  <div class="section-heading">
+    <h2>What Our Clients Say</h2>
+    <p>— Trusted by travelers worldwide —</p>
+  </div>
+
+  <div class="bento-slider">
+    <div class="bento-track">
+      <div class="bento-box">
+        <p class="review-quote">"Amazing service in Indore, Ujjain, and around. Booked SML Executive Bus 12 seater for 4 days and zero complaints. Highly recommend!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FFB6B9;">SA</div>
+          <h4>Sourav Acharya <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"We hired Urbania taxi service for 4 days. Driver courteous, taxi in excellent condition. I recommend the services to everyone."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#A0E7E5;">JA</div>
+          <h4>Dr Jatin Agarwal <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"A gorgeous and wonderful tour. All arrangements and guides were perfect. Will definitely be a customer again!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#B4F8C8;">VA</div>
+          <h4>Vineet Arora <span class="stars">★★★★☆</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"It was a great experience with Jehan Numa Retreat, Bhopal. Happiness Plans suggested this resort. Seamless check-in experience."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FBE7C6;">VB</div>
+          <h4>Vandna Bhasaniya <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"Thank you so much Happiness Plans for our wonderful and hassle-free trip to Sikkim. Harshit supported us at each step."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#D0BDF4;">NS</div>
+          <h4>Neetu Shivhare <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+
+      <!-- duplicate first card for infinite scroll -->
+      <div class="bento-box">
+        <p class="review-quote">"It was a great experience with Happiness plans. They executed the tour really well and extremely smooth. They strictly adhered to the timelines committed and made the whole journey really comfortable and enjoyable. I would really suggest people to plan their trips with Happiness plans.
+Excellent work!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FFB6B9;">SA</div>
+          <h4>Taniya Mitra <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">"We had a wonderful trip.Vehicle was very good and driver was also very polite and professional.
+"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#d8ff64;">SB</div>
+          <h4>
+Sumit Bohra <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">"Thank you for crafting an unforgettable journey! I wholeheartedly recommend Happiness Plans to anyone seeking exceptional travel experience!!"
+"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#9cff62;">SB</div>
+          <h4>Sujata Damodare<span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">"We want to extend our sincere gratitude for the excellent vehicle arrangements and for having Yogi Ji as our driver.
+Thanks to your efforts, our Antriksh Jain Tirth Yatra was an incredibly comfortable experience, all thanks to the *Happiness Plans* team."
+"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#62ffed;">SB</div>
+          <h4>Nilesh Kothari<span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">"We had planned our honeymoon with Happiness Plan for Andaman...had a great experience with them…service was good..choice of hotel were excellent…best service…looking for more holiday trips with them."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#62ffed;">SB</div>
+          <h4>Khooshboo Parekh<span class="stars">★★★★★</span></h4>
+        </div>This was the best trip in my history.
+Accommodation , Food , great hospitality all well planed .
+it was amazing 👌
+Thanks
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">""</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#62ffed;">SB</div>
+          <h4>Khooshboo Parekh<span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+    
+  </div>
+</section>
+
+
+
+
+        
+
    <a href="travel.html" class="discover-more-btn">Discover more</a>
   </section>
 
-    <section class="events-section home-section">
-   <div class="section-heading">
-    <h2>Events</h2>
-    <p>— We plan, you celebrate —</p>
-   </div>
-   <div class="home-grid">
-    <div class="home-card">
-     <img src="assets/images/corporateEvent.jpg" alt="Corporate Gala">
-     <div class="home-card-info">
-      <h3>Formal Events</h3>
-      <p>Sophisticated gatherings.</p>
-     </div>
-    </div>
-    <div class="home-card">
-     <img src="assets/images/wedding.jpg" alt="Birthday Party">
-     <div class="home-card-info">
-      <h3>Informal Events</h3>
-      <p>Fun, casual, and stress-free.</p>
-     </div>
-    </div>
-   </div>
-   <a href="events.html" class="discover-more-btn">Discover more</a>
-  </section>
+  
+      <div class="section-heading">
+    <h2>Video Review</h2>
+    <div><div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
-    <section class="fleet-section home-section">
-   <div class="section-heading">
-    <h2>Our Fleet</h2>
-    <p>— Your journey, your style —</p>
-   </div>
-   <div class="home-grid">
-    <div class="home-card">
-     <img src="assets/images/Cars.jpg" alt="Cars">
-     <div class="home-card-info">
-      <h3>Cars & SUVs</h3>
-      <p>Small groups or individual travelers seeking comfort.</p>
-     </div>
-    </div>
-    <div class="home-card">
-     <img src="assets/images/travalersAndBuses.jpg" alt="Buses">
-     <div class="home-card-info">
-      <h3>Travelers & Buses</h3>
-      <p>Perfect for larger groups needing reliable service.</p>
-     </div>
-    </div>
-   </div>
-   <a href="fleet.html" class="discover-more-btn">Discover more</a>
-  </section>
+  <!-- Video 1 -->
+  <iframe width="450" height="300" 
+    src="https://www.youtube.com/embed/nqDl9DMZ1rc" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
 
-     <section class="reviews-section">
-        <div class="section-heading">
-            <h2>What Our Clients Say</h2>
-            <p>— Trusted by travelers worldwide —</p>
-        </div>
-        <div class="bento-container">
-            <div class="bento-box large-box">
-                <div class="review-quote">"I recently used Happiness Plans for my transportation needs, and I must say, it was a delightful experience! The booking process was smooth and user-friendly. The service provided was excellent; the driver arrived on time and was very courteous. The vehicle was clean and well-maintained, ensuring a comfortable ride. Overall, I highly recommend Happiness Plans for anyone looking for reliable transportation services!"</div>
-                <div class="reviewer-info">
-                    <h4>Rahul Alune</h4>
-                    <p>Traveler</p>
-                </div>
-            </div>
-            <div class="bento-box small-box">
-                <div class="review-quote-small">"I had a great experience with Happiness Plans. Their offers are really good and reasonably priced. The best part is they offer multilingual assistance, which was very helpful for me. Excellent service overall!"</div>
-                <div class="reviewer-info-small">
-                    <h4>Vikas</h4>
-                    <p></p>
-                </div>
-            </div>
-            <div class="bento-box small-box">
-                <div class="review-quote-small">"At Happiness Plans, I experienced excellent service from multilingual agents who made the process hassle-free. The reasonably priced plans and good offers made it a great experience"</div>div>
-                <div class="reviewer-info-small">
-                    <h4>Rashmi Rathore</h4>
-                    <p>JustDail</p>
-                </div>
-            </div>
-            <div class="bento-box large-box">
-                <div class="review-quote">"Customers appreciated the well-planned itineraries and services provided by Happiness Plans for their trips to various destinations such as Manali, Andaman, Bali, Europe, Maldives, etc."</div>
-                <div class="reviewer-info">
-                    
-                    <p>Client</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Video 2 -->
+  <iframe width="450" height="300" 
+    src="https://www.youtube.com/embed/6HP6OysuAXg" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
 
+  <!-- Video 3 -->
+  <iframe width="450" height="300" 
+    src="https://www.youtube.com/embed/Fqr37EaSEy0" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
 
- <footer>
-  <div class="footer-content">
-   <div class="footer-left">
-    <h3><img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px">
-</h3>
-    <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
-    <p>Email: info@happinessplans.com</p>
-    <p>Phone: 9109135533, 9109135530</p>
-   </div>
-   <div class="footer-links">
-    <h2>Quick Links</h2>
-    <br>
-    <ul>
-     <li><a href="about.html">About</a></li>
-     <li><a href="travel.html">Travel</a></li>
-     <li><a href="fleet.html">Fleet</a></li>
-     <li><a href="events.html">Events</a></li>
-    </ul>
-   </div>
-   <div class="footer-social">
-    <h4>Follow Us</h4>
-    <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in"><img src="assets/images/LinkedIn.png"></a>
-    <a href="https://www.instagram.com/happiness.plans/?hl=en"><img src="assets/images/Logo Instagram.png"></a>
-    <a href="#"><img src="assets/images/Icon.png"></a>
-   </div>
+</div>
+</div>
+      </section>
+        
+     <section class="clients-section home-section">
+  <div class="section-heading">
+    <h2>Our Clients</h2>
   </div>
- </footer>
- <!-- WhatsApp floating button -->
-<a href="https://wa.me/+918224803424" target="_blank" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <div class="clients-grid">
+    <div class="client-logo"><img src="assets/images/vivo.png" alt="vivo"></div>
+    <div class="client-logo"><img src="assets/images/asian paint.png" alt="asian paint"></div>
+    <div class="client-logo"><img src="assets/images/blowhot.png" alt="blowhot"></div>
+    <div class="client-logo"><img src="assets/images/BOI.png" alt="BOI"></div>
+    <div class="client-logo"><img src="assets/images/BOB.png" alt="BOB"></div>
+    <div class="client-logo"><img src="assets/images/CB of india.png" alt="CB of India"></div>
+    <div class="client-logo"><img src="assets/images/persistant.png" alt="Persistant"></div>
+    <div class="client-logo"><img src="assets/images/rakuten.png" alt="Rakuten"></div>
+  </div>
+</section>
+      <section class="events-section home-section">
+      <div class="section-heading">
+    <h2>Associates</h2>
+    <div class="clients-grid">
+    <div class="client-logo"><img src="assets/images/aoti.png" alt="aoti"></div>
+    <div class="client-logo"><img src="assets/images/ETAA.png" alt="asian paint"></div>
+    <div class="client-logo"><img src="assets/images/TAAI.png" alt="blowhot"></div>
+    <div class="client-logo"><img src="assets/images/TAFI.png" alt="BOI"></div>
+    <div class="client-logo"><img src="assets/images/ADTOI.png" alt="BOB"></div>
+    <div class="client-logo"><img src="assets/images/PATA.png" alt="CB of India"></div>
+    <div class="client-logo"><img src="assets/images/IATO.png" alt="Persistant"></div>
+    <div class="client-logo"><img src="assets/images/nidhi+.png" alt="Rakuten"></div>
+    <div class="client-logo"><img src="assets/images/MPT.png" alt="Rakuten"></div>
+  </div>
+      </section>
+        
+
+
+
+
+
+ <!-- Footer Section -->
+   <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Happiness Plans</h3>
+      <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
+      <p>Email: info@happinessplans.com</p>
+      <p>Phone: 9109135533, 9109135530</p>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in" target="_blank" class="linkedin">
+          <img src="assets/images/LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/happiness.plans/?hl=en" target="_blank" class="instagram">
+          <img src="assets/images/Logo Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/happinessplans" target="_blank" class="facebook">
+          <img src="assets/images/Facebook.png" alt="Facebook">
+        </a>
+        <a href="https://x.com/HappinessPlans" target="_blank" class="twitter">
+          <img src="assets/images/Icon.png" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/@happinessplansindore" target="_blank" class="twitter">
+          <img src="assets/images/Logo YouTube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
 
 <!-- FontAwesome for WhatsApp icon -->
 <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
-
+<script src="header.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

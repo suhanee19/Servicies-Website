@@ -1,191 +1,163 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const originalCards = document.querySelectorAll('.card');
-  const backgroundSlides = document.querySelectorAll('.background-slide');
-  const textContents = document.querySelectorAll('.text-content');
-  const cardScroller = document.querySelector('.card-scroller');
-  const numOriginalCards = 3; // number of unique cards
-  let currentIndex = 0;
-  let autoPlayInterval;
+    // Define body once at the top for use in theme toggler
+    const body = document.body;
 
-  // --- Function to update active slide, text, and cards ---
-  const updateSlider = (index) => {
-    const backgroundIndex = index % numOriginalCards;
+    // --- Hamburger Menu Logic ---
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Update background + text
-    backgroundSlides.forEach(s => s.classList.remove('active'));
-    backgroundSlides[backgroundIndex].classList.add('active');
-
-    textContents.forEach(t => t.classList.remove('active'));
-    textContents[backgroundIndex].classList.add('active');
-
-    // Reset + highlight next two cards
-    originalCards.forEach(c => c.classList.remove('active'));
-    const next1 = (backgroundIndex + 1) % numOriginalCards;
-    const next2 = (backgroundIndex + 2) % numOriginalCards;
-    originalCards[next1].classList.add('active');
-    originalCards[next2].classList.add('active');
-
-    // Move scroller so next card is first visible
-    const cardWidth = originalCards[0].offsetWidth;
-    const gap = 15;
-    const translateX = -(next1 * (cardWidth + gap));
-    cardScroller.style.transform = `translateX(${translateX}px)`;
-    // Select hero/slider background and cards
-const hero = document.querySelector('.hero'); // or use .slider-container if you prefer
-const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    // Get bg image from clicked card
-    const bgImage = card.getAttribute('data-bg');
-
-    // Change hero background
-    hero.style.background = `linear-gradient(rgba(0,0,50,0.6), rgba(0,0,50,0.6)), url('${bgImage}') center/cover no-repeat`;
-
-    // Remove active from all cards
-    cards.forEach(c => c.classList.remove('active'));
-
-    // Add active class to clicked one
-    card.classList.add('active');
-  });
-
-    // --- Hero Slider Logic ---
-    const backgroundSlides = document.querySelectorAll('.background-slide');
-    const textContents = document.querySelectorAll('.text-content');
-    const cards = document.querySelectorAll('.card');
-    const numOriginalCards = 3;
-    let currentIndex = 0;
-    let autoPlayInterval;
-
-    const updateSlider = (index) => {
-        const slideIndex = index % numOriginalCards;
-        backgroundSlides.forEach(s => s.classList.remove('active'));
-        backgroundSlides[slideIndex].classList.add('active');
-
-        textContents.forEach(t => t.classList.remove('active'));
-        textContents[slideIndex].classList.add('active');
-    };
-
-    const startAutoPlay = () => {
-        autoPlayInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % numOriginalCards;
-            updateSlider(currentIndex);
-        }, 5000); // Change slide every 5 seconds
-    };
-
-    const resetAutoPlay = () => {
-        clearInterval(autoPlayInterval);
-        setTimeout(startAutoPlay, 15000); // Restart after 10 seconds of user interaction
-    };
-
-    cards.forEach((card, index) => {
-        card.addEventListener('click', () => {
-            const slideIndex = parseInt(card.getAttribute('data-index')) % numOriginalCards;
-            updateSlider(slideIndex);
-            resetAutoPlay();
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
         });
-    });
 
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('open');
+            });
+        });
+    }
+
+    // --- HERO SLIDER / CARD ROTATION ---
+    const sliderContainer = document.querySelector('.slider-container');
+    const sliderCards = document.querySelectorAll('.hero-section .card'); // More specific selector
+    const sliderTexts = document.querySelectorAll('.hero-section .text-content'); // More specific selector
     
-    // Initial call to start the hero slider
-    updateSlider(currentIndex);
-    startAutoPlay();
-});
+    // Only run slider logic if the container exists on the page
+    if (sliderContainer && sliderCards.length > 0) {
+        let current = 0;
 
-  };
+        function updateCards() {
+            const total = sliderCards.length;
+            if (total === 0) return;
 
-  // --- Auto-play logic ---
-  const startAutoPlay = () => {
-    autoPlayInterval = setInterval(() => {
-      currentIndex++;
-      if (currentIndex >= originalCards.length) {
-        cardScroller.style.transition = 'transform 0.5s ease-in-out';
-        currentIndex = 0;
-        cardScroller.style.transform = `translateX(0px)`;
+            const bgIndex = current;
+            const leftIndex = (current + 1) % total;
+            const rightIndex = (current + 2) % total;
 
-        setTimeout(() => {
-          cardScroller.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)';
-          updateSlider(currentIndex);
-        }, 50);
-      } else {
-        updateSlider(currentIndex);
-      }
-    }, 5000); // every 5 sec
-  };
+            const bgImg = sliderCards[bgIndex].querySelector('img').src;
+            sliderContainer.style.backgroundImage = `url('${bgImg}')`;
 
-  const resetAutoPlay = () => {
-    clearInterval(autoPlayInterval);
-    setTimeout(startAutoPlay, 10000); // restart after 10 sec
-  };
+            sliderTexts.forEach(t => t.classList.remove('active'));
+            if (sliderTexts[bgIndex]) {
+                sliderTexts[bgIndex].classList.add('active');
+            }
 
-  // --- Card click listeners ---
-  originalCards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-      currentIndex = index;
-      updateSlider(currentIndex);
-      resetAutoPlay();
-    });
-  });
+            sliderCards.forEach(c => {
+                c.style.transform = 'scale(0.8)';
+                c.style.opacity = '0.7';
+                c.style.zIndex = '1';
+            });
 
-  // --- Hamburger menu toggle ---
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
+            if (sliderCards[leftIndex]) {
+                sliderCards[leftIndex].style.transform = 'scale(1)';
+                sliderCards[leftIndex].style.opacity = '1';
+                sliderCards[leftIndex].style.zIndex = '5';
+            }
+            
+            if (sliderCards[rightIndex]) {
+                sliderCards[rightIndex].style.transform = 'scale(0.9)';
+                sliderCards[rightIndex].style.opacity = '0.85';
+                sliderCards[rightIndex].style.zIndex = '3';
+            }
+        }
 
-  // --- Initialize ---
-  updateSlider(0);
-  startAutoPlay();
-});
+        updateCards(); // Initial render
 
-document.addEventListener('DOMContentLoaded', () => {
+        const sliderInterval = setInterval(() => {
+            current = (current + 1) % sliderCards.length;
+            updateCards();
+        }, 3000); // Changed to 3 seconds for a better user experience
+
+        sliderCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                current = index;
+                updateCards();
+                // Reset interval so the next slide waits the full duration
+                clearInterval(sliderInterval);
+            });
+        });
+    }
+
+    // --- LESSER-KNOWN SCROLL BUTTONS ---
     const lesserKnownScrollContainer = document.querySelector('.lesser-known-scroll-container');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
 
-    // Make sure the elements exist on the page before adding event listeners
     if (prevBtn && nextBtn && lesserKnownScrollContainer) {
         prevBtn.addEventListener('click', () => {
-            lesserKnownScrollContainer.scrollBy({
-                left: -320, // Scrolls left by a card width + gap
-                behavior: 'smooth'
-            });
+            lesserKnownScrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
         });
 
         nextBtn.addEventListener('click', () => {
-            lesserKnownScrollContainer.scrollBy({
-                left: 320, // Scrolls right by a card width + gap
-                behavior: 'smooth'
+            lesserKnownScrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+    }
+
+    // --- Modal Logic (for Fleet page) ---
+    const openModalButtons = document.querySelectorAll('[data-modal-target]');
+    const closeModalButtons = document.querySelectorAll('.close-button');
+
+    if (openModalButtons.length > 0) {
+        function openModal(modal) {
+            if (modal == null) return;
+            modal.classList.add('active');
+            body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(modal) {
+            if (modal == null) return;
+            modal.classList.remove('active');
+            body.style.overflow = 'auto'; // Re-enable background scrolling
+        }
+
+        openModalButtons.forEach(card => {
+            card.addEventListener('click', (event) => {
+                // Prevents the slider click event from firing if a fleet card also has a '.card' class
+                event.stopPropagation(); 
+                const modal = document.querySelector(card.dataset.modalTarget);
+                openModal(modal);
+            });
+        });
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                closeModal(modal);
+            });
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal);
+                }
             });
         });
     }
-});
-document.addEventListener('DOMContentLoaded', () => {
-});
-// Theme Toggle Logic
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
 
-    // Check for saved theme in localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-theme');
-    }
+    // --- THEME TOGGLE (Cleaned Up) ---
+    const themeToggle = document.querySelector('.theme-toggle');
 
-    // Add event listener to the toggle button
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-
-        // Save the theme preference
-        if (body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
+    if (themeToggle) {
+        // On page load, apply the saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
         }
-    });
 
+        // Add the click event listener
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+
+            // Save the new theme preference
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 });

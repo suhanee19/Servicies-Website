@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Happiness Plans</title>
+    <style>
+        /* Import a modern font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        /* Basic styles for the page */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            /* A nice, dark gradient for the background */
+            background: linear-gradient(135deg, #1d2b4a, #4a3f6b);
+            color: #ffffff;
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        /* Main container to center content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            /* A subtle fade-in animation on load */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Style for your logo */
+        .logo {
+            max-width: 320px;
+            margin-bottom: 30px;
+        }
+
+        /* Main heading "Coming Soon" */
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Subtitle message */
+        p {
+            font-size: 1.25rem;
+            margin-top: 15px;
+            max-width: 500px;
+            opacity: 0.8;
+        }
+
+        /* Button to go back to the homepage */
+        .home-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #ffffff;
+            color: #1d2b4a; /* Changes text color to match the background */
+        }
+        
+        /* The fade-in animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="/Servicies-Website/assets/images/LOGO.png" alt="Happiness Plans Logo" class="logo">
+
+        <h1>Launching Soon</h1>
+        
+        <p>We are working hard to bring you a new and exciting experience. Please check back later! 🚀</p>
+        
+        <a href="/Servicies-Website/travel.html" class="home-button">Back to Home</a>
+    </div>
+
+</body>
+</html>

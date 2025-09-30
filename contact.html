@@ -14,24 +14,43 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header>
-  <nav class="navbar">
-   <div class="logo">
-    <img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px">
-   </div>
-   <div class="hamburger">&#9776;</div>
+  <header>
+     <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/LOGO.png" alt="Happiness Plans">
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Offerings<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="travel.html">Holiday</a></li>
+                        <li><a href="fleet.html">Fleets</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About </a></li>
 
-   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="travel.html">Travel</a></li>
-    <li><a href="fleet.html">Fleet</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="contact.html">Contact</a></li>
-   </ul>
-       <button id="theme-toggle" class="theme-toggle">🌙</button>
+                <li class="dropdown">
 
-  </nav>
+                    <a href="#">Discover More<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="review.html">Reviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!" target="_blank" class="nav-cta-button">
+                <i class="fab fa-whatsapp"></i> 8224803424
+            </a>
+        </nav>
+      
+
+
  </header>
   <!-- Hero Section -->
   <div class="hero2">
@@ -56,6 +75,7 @@
         <li><i class="fa-solid fa-location-dot"></i> 408, Apollo Premiere, Vijay Nagar, Indore, India 452011</li>
         <li><i class="fa-solid fa-envelope"></i> info@happinessplans.com</li>
         <li><i class="fa-solid fa-phone"></i> +91 82248 03424</li>
+        <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.4037433189606!2d75.89599820000001!3d22.750393199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962e3cdd1442c27%3A0xa35880c85d0d5ff8!2sHappiness%20Plans!5e0!3m2!1sen!2sin!4v1758618378494!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
       </ul>
 
       <p><strong>Let's keep in touch!</strong></p>
@@ -63,6 +83,8 @@
         <a href=""><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/happiness.plans/?hl=en"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in"><i class="fa-brands fa-linkedin-in"></i></a>
+       <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!%20I%20would%20like%20to%20know%20more%20about%20your%20travel%20and%20transportation%20services.">
+  <i class="fab fa-whatsapp"></i>  </a>
       </div>
     </div>
 
@@ -88,36 +110,45 @@
       </form>
     </div>
   </section>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-left">
-        <h3><img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px">
-</h3>
-        <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
-        <p>Email: info@happinessplans.com</p>
-        <p>Phone: 9109135533, 9109135530</p>
-      </div>
-      <div class="footer-links">
-        <h2>Quick Links</h2>
-        <br>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="travel.html">Travel</a></li>
-          <li><a href="fleet.html">Fleet</a></li>
-          <li><a href="events.html">Events</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in"><img src="assets/images/LinkedIn.png"</a>
-        <a href="https://www.instagram.com/happiness.plans/?hl=en"><img src="assets/images/Logo Instagram.png"</a>
-        <a href="#"><img src="assets/images/Icon.png"</a>
+  <!-- Footer Section -->
+   <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Happiness Plans</h3>
+      <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
+      <p>Email: info@happinessplans.com</p>
+      <p>Phone: 9109135533, 9109135530</p>
+    </div>
+
+    <div class="footer-social">
+      <h2>Follow Us</h2>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in" target="_blank" class="linkedin">
+          <img src="assets/images/LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/happiness.plans/?hl=en" target="_blank" class="instagram">
+          <img src="assets/images/Logo Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/happinessplans" target="_blank" class="facebook">
+          <img src="assets/images/Facebook.png" alt="Facebook">
+        </a>
+        <a href="https://x.com/HappinessPlans" target="_blank" class="twitter">
+          <img src="assets/images/Icon.png" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/@happinessplansindore" target="_blank" class="twitter">
+          <img src="assets/images/Logo YouTube.png" alt="YouTube">
+        </a>
       </div>
     </div>
-    <!-- <p class="copyright">© 2025 Happiness Plans. All Rights Reserved.</p> -->
-  </footer>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+  </div>
+</footer>
+
     <!-- WhatsApp floating button -->
-<a href="https://wa.me/+918224803424" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!%20I%20would%20like%20to%20know%20more%20about%20your%20travel%20and%20transportation%20services." target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>   
 </a>
   <script src="script.js"></script>

@@ -3,31 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet - TravelX</title>
+    <title>Fleet - Happiness Plans</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-     <header>
-  <nav class="navbar">
-   <div class="logo">
-    <img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px">
-   </div>
-   <div class="hamburger">&#9776;</div>
+   <header>
+     <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/LOGO.png" alt="Happiness Plans">
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Offerings<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="travel.html">Holiday</a></li>
+                        <li><a href="fleet.html">Fleets</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About </a></li>
 
-   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="travel.html">Travel</a></li>
-    <li><a href="fleet.html">Fleet</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="contact.html">Contact</a></li>
-   </ul>
-       <button id="theme-toggle" class="theme-toggle">🌙</button>
+                <li class="dropdown">
 
-  </nav>
+                    <a href="#">Discover More<i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="review.html">Reviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!" target="_blank" class="nav-cta-button">
+                <i class="fab fa-whatsapp"></i> 8224803424
+            </a>
+        </nav>
+      
+
+
  </header>
-
     <section class="hero fleet-hero">
         <h1>Our Fleet</h1>
         <p>Choose your ride and start your adventure!</p>
@@ -39,67 +57,183 @@
             <p>— Find the perfect vehicle for your journey —</p>
         </div>
         <div class="fun-fleet-grid">
-            <div class="fun-fleet-card">
-                <img src="assets/images/innova.jpg" alt="Luxury Sedan">
+            <div class="fun-fleet-card" data-modal-target="#innova-modal">
+                <img src="assets/images/innova.jpg" alt="Innova">
                 <div class="fun-card-info">
                     <h3>Innova</h3>
-                    <p>Travel in style</p>
                 </div>
             </div>
-            <div class="fun-fleet-card">
-                <img src="assets/images/dezire.jpg" alt="Premium SUV">
+            <div class="fun-fleet-card" data-modal-target="#dzire-modal">
+                <img src="assets/images/dezire.jpg" alt="Dzire">
                 <div class="fun-card-info">
                     <h3>Dzire</h3>
-                    <p>Space & comfort</p>
                 </div>
             </div>
-            <div class="fun-fleet-card">
-                <img src="assets/images/tempo.jpg" alt="Standard Sedan">
+            <div class="fun-fleet-card" data-modal-target="#traveller-modal">
+                <img src="assets/images/tempo.jpg" alt="Tempo Traveller">
                 <div class="fun-card-info">
                     <h3>Traveller</h3>
-                    <p>Reliable and ready</p>
                 </div>
             </div>
-            <div class="fun-fleet-card">
-                <img src="assets/images/bus.jpg" alt="Minivans">
+            <div class="fun-fleet-card" data-modal-target="#bus-modal">
+                <img src="assets/images/bus.jpg" alt="Bus">
                 <div class="fun-card-info">
-                    <h3>Bus</h3>
-                    <p>Fun for the whole group</p>
+                    <h3>Mini Bus</h3>
+                </div>
+            </div>
+            <div class="fun-fleet-card" data-modal-target="#urbania-modal">
+                <img src="assets/images/urbania.jpg" alt="Urbania">
+                <div class="fun-card-info">
+                    <h3>Urbania</h3>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="innova-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Toyota Innova Crysta</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="assets/images/innova.jpg" alt="Innova Front">
+                    <img src="assets/images/Innova-INT.jpg" alt="Innova Interior">
+                </div>
+                <div class="modal-info">
+                    <p>Perfect for family trips and executive travel, the Innova Crysta offers unmatched comfort, space, and reliability.</p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 6-7 Passengers</li>
+                        <li><strong>Features:</strong> Air Conditioning, Ample Luggage Space, Premium Interior</li>
+                        <li><strong>Ideal For:</strong> Airport Transfers, City Tours, Outstation Trips</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dzire-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Maruti Suzuki Dzire</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="assets/images/dezire.jpg" alt="Dzire Front">
+                    <img src="assets/images/dzire-int.avif" alt="Dzire Side View">
+                </div>
+                <div class="modal-info">
+                    <p>An elegant and efficient compact sedan, the Dzire is perfect for city travel and short trips for small groups or couples.</p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 4 Passengers</li>
+                        <li><strong>Features:</strong> Air Conditioning, Compact Design, Good Mileage</li>
+                        <li><strong>Ideal For:</strong> Local Sightseeing, Business Meetings, Daily Commutes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="traveller-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tempo Traveller</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="assets/images/tempo.jpg" alt="Tempo Traveller Front">
+                    <img src="assets/images/tempo-int.jpeg" alt="Traveller Seating">
+                </div>
+                <div class="modal-info">
+                    <p>The ideal choice for group excursions, the Tempo Traveller provides comfortable seating and ample space for everyone.</p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 12-20 Passengers</li>
+                        <li><strong>Features:</strong> Spacious Seating, Air Conditioning, Entertainment System</li>
+                        <li><strong>Ideal For:</strong> Group Tours, Family Vacations, Corporate Outings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="bus-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Luxury Bus</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="assets/images/bus.jpg" alt="Bus Exterior">
+                    <img src="assets/images/minibus-int.jpg" alt="Bus Interior Seats">
+                </div>
+                <div class="modal-info">
+                    <p>For large groups, our buses offer a comfortable and safe journey, equipped with modern amenities for long-distance travel.</p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 30-50 Passengers</li>
+                        <li><strong>Features:</strong> Reclining Seats, AC/Non-AC options, Luggage Compartment</li>
+                        <li><strong>Ideal For:</strong> Weddings, Pilgrimages, Educational Tours, Large Corporate Events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="urbania-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Force Urbania</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="assets/images/urbania.jpg" alt="Urbania Exterior">
+                    <img src="assets/images/Urbania_LWB-Interior.jpg" alt="Urbania Luxury Interior">
+                </div>
+                <div class="modal-info">
+                    <p>The Force Urbania is a premium van that offers a blend of style, space, and next-gen technology for a superior travel experience.</p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 10-15 Passengers</li>
+                        <li><strong>Features:</strong> Luxurious Interiors, Advanced Safety, Smooth Ride</li>
+                        <li><strong>Ideal For:</strong> Premium Group Travel, VIP transport, Special Family Trips</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-left">
-                <h3><img src="assets/images/LOGO.png" alt="Happiness Plans" height="60px"></h3>
+                <h3>Happiness Plans</h3>
                 <p>408, Apollo Premiere, Vijay Nagar, Indore, India 452011</p>
                 <p>Email: info@happinessplans.com</p>
                 <p>Phone: 9109135533, 9109135530</p>
             </div>
-            <div class="footer-links">
-                <h2>Quick Links</h2>
-                <br>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="travel.html">Travel</a></li>
-                    <li><a href="fleet.html">Fleet</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </div>
             <div class="footer-social">
-                <h4>Follow Us</h4>
-                <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in"><img src="assets/images/LinkedIn.png"></a>
-                <a href="https://www.instagram.com/happiness.plans/?hl=en"><img src="assets/images/Logo Instagram.png"></a>
-                <a href="#"><img src="assets/images/Icon.png"></a>
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/happiness-plans/?originalSubdomain=in" target="_blank" class="linkedin">
+                        <img src="assets/images/LinkedIn.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.instagram.com/happiness.plans/?hl=en" target="_blank" class="instagram">
+                        <img src="assets/images/Logo Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/happinessplans" target="_blank" class="facebook">
+                        <img src="assets/images/Facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://x.com/HappinessPlans" target="_blank" class="twitter">
+                        <img src="assets/images/Icon.png" alt="Twitter">
+                    </a>
+                    <a href="https://youtube.com/@happinessplansindore" target="_blank" class="youtube">
+                        <img src="assets/images/Logo YouTube.png" alt="YouTube">
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+        </div>
     </footer>
-    <!-- WhatsApp floating button -->
-<a href="https://wa.me/+918224803424" target="_blank" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
+
+    <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!%20I%20would%20like%20to%20know%20more%20about%20your%20travel%20and%20transportation%20services." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+   

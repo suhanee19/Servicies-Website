@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Assistance</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="style.css">
+   <style>
+        /* --- General & Reset Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo img { height: 60px; }
+        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+        .nav-links > li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; }
+        
+        /* --- Hero Section --- */
+        .hero2 {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background: url('/Servicies-Website/assets/images/italy-8266783_1280\ 1.png') no-repeat center center/cover;
+        }
+
+        .hero2::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 35, 66, 0.6);
+        }
+
+        .hero2 h1, .hero2 p {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero2 h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+        }
+
+        /* --- Visa Info Section --- */
+        .visa-info-section {
+            padding: 80px 5%;
+            max-width: 900px; /* Constrain width for better readability */
+            margin: 0 auto;
+            text-align: center; /* Center all content */
+        }
+
+        .visa-info-column h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #1d2b4a;
+        }
+
+        .visa-info-column > p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .visa-info-column ul {
+            list-style: none;
+            margin: 30px 0;
+            padding: 0;
+            display: inline-block; /* Allows the list to be centered */
+            text-align: left; /* Aligns text within the list */
+        }
+
+        .visa-info-column ul li {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .visa-info-column ul li i {
+            margin-right: 15px;
+            color: #5cb85c; /* Green accent color */
+            width: 25px;
+        }
+
+        /* --- NEW Tourist Visa Focus Section --- */
+        .visa-focus-section {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .visa-focus-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #1d2b4a;
+        }
+
+        .visa-focus-section > p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .visa-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .visa-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid #d4af37; /* Gold accent */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .visa-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .visa-card i {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .visa-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #1d2b4a;
+        }
+
+        /* --- Footer & WhatsApp --- */
+        footer {
+            background-color: #2a3a5b; color: #e0e0e0; padding: 40px 20px; text-align: center;
+        }
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px rgba(0,0,0,0.3); z-index: 100; display: flex; justify-content: center; align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/LOGO.png" alt="Happiness Plans">
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="travel.html">Holiday <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="domestic-tours.html">Domestic</a></li>
+                        <li><a href="international-tours.html">International</a></li>
+                        <li><a href="international-tours.html">Visa Assistance</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="fleet.html">Fleet <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fleet-sedans.html">Dzire</a></li>
+                        <li><a href="fleet-sedans.html">Innova</a></li>
+                        <li><a href="fleet-sedans.html">Urbania</a></li>
+                        <li><a href="fleet-vans.html">Travellers</a></li>
+                        <li><a href="fleet-buses.html">Mini Bus</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="discover.html">Discover More</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/+918224803424?text=Hello%20Happiness%20Plans!" target="_blank" class="nav-cta-button">
+                <i class="fab fa-whatsapp"></i> 8224803424
+            </a>
+        </nav>
+      
+    </header>
+
+    <div class="hero2">
+        <div class="overlay">
+            <h1>Visa Assistance</h1>
+            <p>Your Travel, Simplified</p>
+        </div>
+    </div>
+
+    <section class="visa-info-section">
+        <div class="visa-info-column">
+            <h2>Plan Your Visa Hassle-Free</h2>
+            <p>We provide comprehensive visa assistance services for travelers worldwide. Our experts guide you through the paperwork and procedures to make the process smooth and fast.</p>
+            
+            <ul>
+                <li><i class="fa-solid fa-globe"></i> International Visa Guidance</li>
+                <li><i class="fa-solid fa-file-lines"></i> Document Verification & Preparation</li>
+                <li><i class="fa-solid fa-calendar-check"></i> Appointment Scheduling</li>
+                <li><i class="fa-solid fa-headset"></i> Dedicated Customer Support</li>
+            </ul>
+
+            <div class="visa-focus-section">
+                <h3>Specializing in Tourist Visas</h3>
+                <p>We make your dream holidays a reality by simplifying the tourist visa process for the world's most popular destinations.</p>
+                <div class="visa-card-grid">
+                    <div class="visa-card">
+                        <i class="fas fa-passport"></i>
+                        <h4>Schengen Area</h4>
+                        <p>Explore 29 European countries with a single visa.</p>
+                    </div>
+                    <div class="visa-card">
+                        <i class="fas fa-landmark"></i>
+                        <h4>USA</h4>
+                        <p>Guidance for B1/B2 tourist and visitor visas.</p>
+                    </div>
+                    <div class="visa-card">
+                        <i class="fas fa-crown"></i>
+                        <h4>United Kingdom</h4>
+                        <p>Complete assistance for your UK travel plans.</p>
+                    </div>
+                    <div class="visa-card">
+                        <i class="fas fa-city"></i>
+                        <h4>UAE (Dubai)</h4>
+                        <p>Fast and reliable visa processing for your Dubai trip.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/+918224803424" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>  
+    </a>
+</body>
+</html>
