@@ -101,15 +101,15 @@
 
         /* --- CARD BACKGROUNDS --- */
         .card-holiday {
-            background-image: url('/assets/images/event.jpg');
+            background-image: url('assets/images/event.jpg');
             
         }
         .card-event {
-            background-image: url('/assets/images/beach.jpg');
+            background-image: url('assets/images/beach.jpg');
         }
 
         .card-fleet {
-            background-image: url('/assets/images/Frame 44.png');
+            background-image: url('assets/images/Frame 44.png');
         }
 
         /* --- CARD STATES --- */
@@ -165,7 +165,7 @@
         }
 
         .background-card-text .card-subtitle {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 400;
             transform-origin: bottom left;
         }
