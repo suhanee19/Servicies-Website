@@ -3,15 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardData = [
                 {
                     title: "Holiday",
-                    subtitle: "Exquisite travel experiences designed for comfort, discovery, and style."
                 },
                 {
                     title: "Events",
-                    subtitle: "Transforming occasions into unforgettable milestones."
                 },
                 {
                     title: "Fleets",
-                    subtitle: "Effortless journeys powered by meticulous fleet control."
                 }
             ];
 

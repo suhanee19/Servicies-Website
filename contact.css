@@ -43,6 +43,7 @@ body {
   color: #fff;
   letter-spacing: 2px;
   animation: fadeIn 1.5s ease;
+  font-style: italic;
 }
 
 .hero2 p {
