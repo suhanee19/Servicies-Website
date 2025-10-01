@@ -1,147 +1,125 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-        :root {
-            --card-width: 280px;
-            --card-height: 330px;
-            --card-spacing: 15px;
-            --font-color: #b7b7b7;
-            --bg-color: #abc7dc;
-            --animation-duration: 1.6s; /* Shorter for a snappier feel */
-            --smoother-timing: cubic-bezier(0.25, 0.1, 0.23, 1);
-        }
+:root {
+    --card-width: 280px;
+    --card-height: 330px;
+    --card-spacing: 15px;
+    --font-color: #b7b7b7;
+    --bg-color: #abc7dc;
+    /* --- IMPROVEMENT: A more balanced duration for a fluid, snappy feel --- */
+    --animation-duration: 1.2s;
+    /* --- IMPROVEMENT: A professional ease-in-out curve for graceful motion --- */
+    --smoother-timing: cubic-bezier(0.65, 0, 0.35, 1);
+}
 
-        .slider-section {
-            width: 100vh;
-            min-height: 100vh;
-            position: relative;
-            width: 100%;
-            height: 500px; /* Set your desired section height */
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;}
-        .slider-wrapper{
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            display: flex;
-            min-height: 100vh;
-            width: 100%;
-            justify-content:flex-end;
-            align-items: center;
-            height: 100vh;
-            background-color: var(--bg-color);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            transition: background-image var(--animation-duration) var(--smoother-timing);
-            overflow: hidden;
-        }
+.slider-section {
+    position: relative;
+    /* --- FIX: Corrected width and made layout full-screen --- */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        .slider-container {
-            position: relative;
-            /* Adjusted width to show one full card, a second full card, and a third half card, with spacing in between */
-            width: calc(1.1 * var(--card-width) + 2 * var(--card-spacing) + 1.5 * var(--card-width));
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            margin-left: 33vw;
-            align-items: center;
-            /* Add perspective for a 3D effect on the cards themselves */
-            perspective: 1500px;
-        }
+.slider-wrapper {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: flex-end; /* Keeps slider on the right */
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    transition: background-image var(--animation-duration) var(--smoother-timing);
+    overflow: hidden;
+}
 
-        .card {
-            position: absolute;
-            width: var(--card-width);
-            height: var(--card-height);
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            color: var(--font-color);
-            padding-top: 10px;
-            padding-right: 110px;
-            color: #f6f6f6;
-            overflow: hidden;
-            font-weight: 1000;
-            font-size: 1.5rem;
-            box-sizing: border-box;
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.658);
-            transition: transform var(--animation-duration) var(--smoother-timing),
-                        opacity var(--animation-duration) var(--smoother-timing),
-                        z-index 0s var(--animation-duration);
-        }
+.slider-container {
+    position: relative;
+    width: calc(1.1 * var(--card-width) + 2 * var(--card-spacing) + 1.5 * var(--card-width));
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25vw;
+    perspective: 1500px;
+}
 
-        
-        .card-content {
-            position: absolute;
-            bottom: 3px;
-            left: 3px;
-            right: 3px;
-            color: #e0dbdb;
-        }
+.card {
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    background-size: cover;
+    top:20%;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform var(--animation-duration) var(--smoother-timing),
+                opacity var(--animation-duration) var(--smoother-timing);
 
-        .card-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-top: 0.1rem;
-            color: #ede8e8;
-            text-shadow: 2px 2px 4px rgba(249, 241, 241, 0.5);
-        }
+    /* --- IMPROVEMENT: Styles to support turning cards into links <a> without layout shifts --- */
+   
+    color: #f6f6f6;
+    font-weight: 1000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        .card-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
+footer{
+    text-align: left;
+}
 
+/* --- CARD BACKGROUNDS --- */
+.card-holiday {
+    background-image: url('assets/images/event.jpg');
+}
+.card-event {
+    background-image: url('assets/images/beach.jpg');
+}
+.card-fleet {
+    background-image: url('assets/images/Frame 44.png');
+}
 
-        /* --- CARD BACKGROUNDS --- */
-        .card-holiday {
-            background-image: url('assets/images/event.jpg');
-    
-            
-        }
-        .card-event {
-            background-image: url('assets/images/beach.jpg');
-        }
+/* --- CARD STATES (IMPROVED for consistency and smoother motion) --- */
+.card.active {
+    transform: translateX(0) scale(1.1);
+    opacity: 1;
+    z-index: 3;
+    /* --- IMPROVEMENT: This makes the main card unclickable if it's a link --- */
+    pointer-events: none;
+    cursor: default;
+}
 
-        .card-fleet {
-            background-image: url('assets/images/Frame 44.png');
-        }
+.card.next {
+    /* --- FIX: Corrected formula for a visually consistent gap --- */
+    transform: translateX(calc(var(--card-width) * 1.1 + var(--card-spacing))) scale(1) rotateY(-8deg);
+    opacity: 0.9;
+    z-index: 2;
+}
 
-        /* --- CARD STATES --- */
-        .card.active {
-            transform: translateX(0) scale(1.1) rotateY(0deg);
-            opacity: 1;
-            z-index: 3;
-        }
+.card.next-next {
+    /* --- FIX: Unified scale and corrected formula for a consistent gap --- */
+    transform: translateX(calc(var(--card-width) * 2.1 + var(--card-spacing) * 2)) scale(1) rotateY(-16deg);
+    opacity: 0.7;
+    z-index: 1;
+}
 
-        .card.next {
-            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing))) scale(0.95) rotateY(-5deg);
-            opacity: 0.8;
-            z-index: 2;
-        }
+.card.leaving {
+    /* --- IMPROVEMENT: A more natural leaving animation --- */
+    transform: translateX(-150px) scale(0.8) rotateY(0deg);
+    opacity: 0;
+}
 
-        .card.next-next {
-            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing))) scale(0.97) rotateY(-10deg);
-            opacity: 0.7;
-            z-index: 1;
-        }
-
-        .card.leaving {
-            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing) + 100px)) scale(0.8) rotateY(-15deg);
-            opacity: 0;
-            z-index: -0.1;
-        }
-
-        /* --- BACKGROUND TEXT --- */
-        .background-card-text {
-            position: absolute;
+/* --- BACKGROUND TEXT --- */
+.background-card-text {
+    position: absolute;
     left: 3vw;
-    bottom: 5vh;
-    margin-bottom: 170px;
+    /* --- IMPROVEMENT: Better positioning for full-screen layout --- */
+    bottom: 25vh;
     z-index: 2;
     color: #ffffffa6;
     text-align: left;
@@ -149,78 +127,57 @@
     width: auto;
     font-size: 1rem;
     user-select: none;
-    font-family: April-Fatface;
-        }
+}
 
-        .background-card-text .card-title {
-            font-size: 6rem;
-            font-weight: bold;
-            font-style: italic;
-            font-family: April Fatface;
+.background-card-text .card-title {
+    font-size: 6rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Abril Fatface', serif; /* Corrected font name */
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    color: #ffffff;
+}
 
-            text-shadow: #ecc9c9 1px 1px 2px, #ffa7a7 0 0 1em, #b7b7b7 0 0 0.2em;
-            color: #ffffff;
-            transform-origin: bottom left;
-        }
+.background-card-text .card-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.background-card-text .card-title,
+.background-card-text .card-subtitle {
+    transition: opacity calc(var(--animation-duration) / 1.6) var(--smoother-timing),
+                transform calc(var(--animation-duration) / 1.6) var(--smoother-timing);
+    opacity: 1;
+    /* --- RESTORED: Added scale back to the base state --- */
+    transform: translateY(0) scale(1);
+}
 
-        .background-card-text .card-subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
-            transform-origin: bottom left;
-        }
+.background-card-text.fade .card-title,
+.background-card-text.fade .card-subtitle {
+    opacity: 0;
+    /* --- RESTORED: Brought back your original 3D transform --- */
+    transform: translateY(30px) scale(1) perspective(500px) rotateX(10deg);
+}
 
-        .background-card-text .card-title,
-        .background-card-text .card-subtitle {
-            transition: opacity var(--animation-duration) var(--smoother-timing), transform var(--animation-duration) var(--smoother-timing);
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
-        /* New class for fade-out/in text transition */
-        .background-card-text.fade .card-title,
-        .background-card-text.fade .card-subtitle {
-            opacity: 0;
-            transform: translateY(30px) scale(1) perspective(500px) rotateX(10deg);
-        }
-/* ================================================================
-   ADDED: RESPONSIVE CODE FOR THE ANIMATED CARD SLIDER
-================================================================ */
-
-/* ================================================================
-   ADDED: RESPONSIVE CODE FOR THE SLIDER (TABLET ONLY)
-================================================================ */
-
-/* This rule now ONLY applies to screens between 601px and 992px wide */
+/* --- RESPONSIVE CODE --- */
 @media (min-width: 601px) and (max-width: 1002px) {
     :root {
-        /* Scale down card dimensions for tablets */
         --card-width: 240px;
         --card-height: 280px;
         --card-spacing: 12px;
     }
 
-    .slider-section,
-    .slider-container {
-        /* Remove the large desktop padding to center the slider */
-        padding-left: 0;
-    }
-
     .slider-section {
-        height: 450px; /* Adjust section height */
-
-
-
+        /* --- FIX: Maintain full-screen on tablets --- */
+        height: 100vh;
     }
 
     .slider-container {
-        /* Recalculate width based on new variables to ensure it fits */
+        padding-left: 0;
         width: 100%;
-        padding: 0 20px; /* Add some side padding */
-
+        padding: 0 20px;
     }
     
     .background-card-text {
-        /* Reposition and resize the large background text */
         left: 5vw;
         bottom: auto;
         top: 8vh;
@@ -230,16 +187,10 @@
     .background-card-text .card-title {
         font-size: 4.5rem;
     }
-
-    .background-card-text .card-subtitle {
-        font-size: 1.2rem;
-    }
 }
 
-
-@media (max-width: 601px){
-    .slider-container{
+@media (max-width: 601px) {
+    .slider-container {
         display: none;
     }
 }
-

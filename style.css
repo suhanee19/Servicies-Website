@@ -8,7 +8,7 @@
     box-sizing: border-box;
     font-family: 'Playfair Display', serif;
 }
-
+client-logo
 
 /* ...existing code... */
 .logo
@@ -221,7 +221,7 @@ body {
 /* Grid Layout */
 .clients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 40px;
   align-items: center;
   justify-items: center;
