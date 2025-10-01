@@ -125,7 +125,7 @@
         }
 
         .card.next-next {
-            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing))) scale(0.9) rotateY(-10deg);
+            transform: translateX(calc(1.1 * var(--card-width) + var(--card-spacing) + var(--card-width) + var(--card-spacing))) scale(0.97) rotateY(-10deg);
             opacity: 0.7;
             z-index: 1;
         }

@@ -595,12 +595,7 @@ footer {
     margin-left: 16px;
     
 }
-        .nav-links > li {
-            margin: 0 15px; /* Use margin for spacing instead of gap */
-        }
-        body.dark-theme .navbar {
-    background: transparent !important;
-}
+        
 
         .nav-links a {
             text-decoration: none;
@@ -608,7 +603,7 @@ footer {
             text-shadow: white;
             font-weight: 600;
             font-size: 1.3rem;
-            padding: 20px 5px; /* Add padding for a larger click area */
+            /* padding: 10px 5px; Add padding for a larger click area */
             position: relative; /* Needed for the underline pseudo-element */
             transition: color 0.3s ease;
             display: flex;
@@ -653,6 +648,7 @@ footer {
 
         /* --- CTA Button --- */
         .nav-cta-button {
+            font-family: Helvetica, sans-serif;
             background-color: var(--accent-green);
             color: #0e0000;
             text-decoration: none;
