@@ -478,14 +478,14 @@ footer {
             max-width: 1200px;
             margin: 3 auto;
             padding: 30px 6%; /* NEW: Reduced padding */
-            color: #a0aec0;
+            color: #ffffff;
+            text-align: center;
         }
 
         .footer-info h3, .footer-social h3 {
             font-size: 1.1rem;
             font-weight: 600;
             color: #ffffff;
-            margin: 4px 4px 10px 8px;
         }
 
         .footer-info p {
@@ -901,7 +901,8 @@ section h2 {
 
 .vertical-card-content h3 {
  margin: 0 0 5px;
- font-size: 1.2rem;
+ font-size: 1.4rem;
+ text-align: center;
  color: var(--primary-dark);
 }
 
@@ -2002,4 +2003,594 @@ body.dark-theme .theme-toggle {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+/* =================================================================== */
+/* =========== NEW MOBILE FIXES (ADD TO END OF CSS FILE) ============= */
+/* =================================================================== */
+
+/* Define the fun animation keyframes */
+@keyframes card-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* --- Styles for tablets and phones (768px and smaller) --- */
+@media (max-width: 768px) {
+
+  /* 1. Make the logo smaller in the navbar */
+  .navbar .logo img {
+    height: 40px; /* Reduced from 50px */
+  }
+
+  /* 3. Add the fun animation to cards */
+  /* This targets all cards within the main grid containers */
+  .home-grid .home-card,
+  .section-grid .vertical-card,
+  .events-grid .event-card,
+  .team-grid .team-card,
+  .fun-fleet-grid .fun-fleet-card {
+    /* Apply the animation */
+    animation: card-pop-in 0.5s ease-out 0.2s;
+    
+    /* This makes sure the animation runs correctly */
+    animation-fill-mode: both; 
+  }
+  
+  /* Add a slight delay for every other card to look more dynamic */
+  .home-grid .home-card:nth-child(even),
+  .section-grid .vertical-card:nth-child(even),
+  .events-grid .event-card:nth-child(even),
+  .team-grid .team-card:nth-child(even),
+  .fun-fleet-grid .fun-fleet-card:nth-child(even) {
+      animation-delay: 0.3s;
+  }
+}
+
+
+/* --- Styles for small phones (500px and smaller) --- */
+@media (max-width: 500px) {
+  
+  /* 2. Center the fleet cards */
+  .fun-fleet-grid {
+    /* This centers the single card within the grid column */
+    justify-items: center; 
+  }
+}
+/* =================================================================== */
+/* ==== FINAL MOBILE STYLES & FIXES (ADD TO END OF CSS FILE) ======= */
+/* =================================================================== */
+
+/* Define the fun animation keyframes */
+@keyframes card-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --- Styles for tablets and phones (1100px and smaller) --- */
+@media (max-width: 1100px) {
+
+  /* Make the navbar transparent */
+  .navbar {
+    background: rgba(252, 252, 252, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-theme .navbar {
+      background: rgba(30, 30, 30, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Make the open nav menu background transparent/glassy */
+  .nav-links {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Smooth slide-down transition */
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+  }
+
+  .nav-links.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
+  }
+
+  body.dark-theme .nav-links {
+    background-color: rgba(30, 30, 30, 0.5);
+  }
+
+  /* Smoother transition for the hamburger icon */
+  .hamburger span {
+    transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.27, 1.55), opacity 0.2s linear;
+  }
+
+  /* Mobile dropdown menu functionality */
+  .nav-links .dropdown .dropdown-toggle i {
+    display: inline-block;
+    margin-left: auto;
+    padding-left: 15px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links .dropdown.open .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
+
+  .nav-links .dropdown .dropdown-menu {
+    display: block;
+    position: static;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: 0 10px;
+  }
+  
+  body.dark-theme .nav-links .dropdown .dropdown-menu {
+      background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-links .dropdown.open .dropdown-menu {
+    max-height: 500px;
+    padding: 10px;
+  }
+  
+  .nav-links .dropdown-menu li a {
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 12px 20px;
+      border-bottom: none;
+  }
+}
+
+/* --- Styles for smaller tablets and phones (768px and smaller) --- */
+@media (max-width: 768px) {
+  
+  /* Make the logo smaller */
+  .navbar .logo img {
+    height: 40px;
+  }
+
+  /* Add fun animation to cards */
+  .home-grid .home-card,
+  .section-grid .vertical-card,
+  .events-grid .event-card,
+  .team-grid .team-card,
+  .fun-fleet-grid .fun-fleet-card {
+    animation: card-pop-in 0.5s e
+    ase-out 0.2s;
+    animation-fill-mode: both; 
+  }
+  
+  .home-grid .home-card:nth-child(even),
+  .section-grid .vertical-card:nth-child(even),
+  .events-grid .event-card:nth-child(even),
+  .team-grid .team-card:nth-child(even),
+  .fun-fleet-grid .fun-fleet-card:nth-child(even) {
+      animation-delay: 0.3s;
+  }
+
+  /* Reduce footer size */
+  footer .aurora-waves {
+    height: 70px;
+  }
+
+  footer .footer-container {
+    padding: 30px 20px;
+    gap: 25px;
+    text-align: center;
+  }
+  div.footer-social{
+    text-align: center;
+
+  }
+  footer .footer-info p,
+  footer .footer-contact-item {
+      font-size: 0.85rem;
+      text-align: center;
+  }
+}
+
+/* --- Styles for small phones (500px and smaller) --- */
+@media (max-width: 500px) {
+  
+  /* Center the fleet cards */
+  .fun-fleet-grid {
+    justify-items: center; 
+  }
+  .nav-links{
+    background-color: #c3c3c3bc;
+  }
+   /* Make all links in the mobile menu black for better contrast */
+  
+ .nav-links a,
+   .nav-links .dropdown-menu li a,
+  .nav-links .dropdown .dropdown-toggle i {
+    color: #070000;
+  }
+}
+/* =================================================================== */
+/* ==== FINAL MOBILE STYLES & FIXES (ADD TO END OF CSS FILE) ======= */
+/* =================================================================== */
+
+/* Define the fun animation keyframes */
+@keyframes card-pop-in {
+ from {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+ }
+ to {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+ }
+}
+
+/* --- Styles for tablets and phones (1100px and smaller) --- */
+@media (max-width: 1100px) {
+
+ /* Make the navbar transparent */
+ .navbar {
+    /* CHANGED: Set background to transparent */
+  background: transparent; 
+    /* REMOVED: backdrop-filter and border for a truly transparent look */
+  backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  border-bottom: none;
+ }
+ 
+ body.dark-theme .navbar {
+    /* Also make the dark theme navbar transparent */
+  background: transparent;
+    border-bottom: none;
+ }
+
+ /* Make the open nav menu background glassy */
+ .nav-links {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+ }
+
+ .nav-links.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
+ }
+
+ body.dark-theme .nav-links {
+  background-color: rgba(30, 30, 30, 0.5);
+ }
+
+  /* Make all links in the mobile menu black for better contrast */
+  .nav-links a,
+  .nav-links .dropdown-menu li a,
+  .nav-links .dropdown .dropdown-toggle i {
+    color: #070000 !important; /* Use !important to ensure override */
+  }
+
+ /* Smoother transition for the hamburger icon */
+ .hamburger span {
+  transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.27, 1.55), opacity 0.2s linear;
+ }
+
+ /* Mobile dropdown menu functionality */
+ .nav-links .dropdown .dropdown-toggle i {
+  display: inline-block;
+  margin-left: auto;
+  padding-left: 15px;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+ }
+ 
+ .nav-links .dropdown.open .dropdown-toggle i {
+  transform: rotate(180deg);
+ }
+
+ .nav-links .dropdown .dropdown-menu {
+  display: block;
+  position: static;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  border-radius: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  padding: 0 10px;
+ }
+ 
+ body.dark-theme .nav-links .dropdown .dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.05);
+ }
+ 
+ .nav-links .dropdown.open .dropdown-menu {
+  max-height: 500px;
+  padding: 10px;
+ }
+ 
+ .nav-links .dropdown-menu li a {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 12px 20px;
+  border-bottom: none;
+ }
+}
+
+/* --- Styles for smaller tablets and phones (768px and smaller) --- */
+@media (max-width: 768px) {
+ 
+ /* Make the logo smaller */
+ .navbar .logo img {
+  height: 40px;
+ }
+ /* Add fun animation to cards */
+ .home-grid .home-card,
+ .section-grid .vertical-card,
+ .events-grid .event-card,
+ .team-grid .team-card,
+ .fun-fleet-grid .fun-fleet-card {
+  animation: card-pop-in 0.5s ease-out 0.2s;
+  animation-fill-mode: both; 
+ }
+ 
+ .home-grid .home-card:nth-child(even),
+ .section-grid .vertical-card:nth-child(even),
+ .events-grid .event-card:nth-child(even),
+ .team-grid .team-card:nth-child(even),
+ .fun-fleet-grid .fun-fleet-card:nth-child(even) {
+   animation-delay: 0.3s;
+ }
+ /* Reduce footer size */
+ footer .aurora-waves {
+  height: 70px;
+ }
+ footer .footer-container {
+  padding: 30px 20px;
+  gap: 25px;
+ }
+ 
+ footer .footer-info p,
+ footer .footer-contact-item {
+  font-size: 0.5rem;
+ }
+}
+
+/* --- Styles for small phones (500px and smaller) --- */
+@media (max-width: 500px) {
+ 
+ /* Center the fleet cards */
+ .fun-fleet-grid {
+  justify-items: center; 
+ }
+ footer .footer-info p,
+ footer .footer-contact-item {
+  font-size: 0.5rem;
+ }
+}
+
+
+
+/* =================================================================== */
+/* ==== NEW "INSTAGRAM-STYLE" MOBILE OVERHAUL (Based on Video) ==== */
+/* ==== Replace your previous mobile CSS block with this one ==== */
+/* =================================================================== */
+
+
+
+@media (max-width: 500px) {
+    /* Adjustments for the smallest phones */
+    .clients-grid {
+        gap: 1px !important;
+        padding: 0 10px !important;
+    }
+    
+}/* =================================================================== */
+/* ==== NEW COMPACT & UI-FRIENDLY VERSION (Based on Feedback) ==== */
+/* ==== Goal: Reduce the size of everything for a cleaner UI ==== */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- 1. Compact Hero Sections --- */
+    .travel-hero,
+    .events-hero,
+    .fleet-hero,
+    .about-hero {
+        height: 45vh !important; /* SIGNIFICANTLY REDUCED height */
+        padding: 1rem !important;
+        justify-content: center !important; /* Re-center content */
+    }
+
+    .travel-hero h1,
+    .events-hero h1,
+    .fleet-hero h1,
+    .about-hero h1 {
+        font-size: 2.2rem !important; /* REDUCED font size */
+    }
+    
+    .travel-hero p,
+    .events-hero p,
+    .fleet-hero p,
+    .about-hero p {
+        font-size: 1rem !important; /* REDUCED font size */
+    }
+
+
+    /* --- 2. Smaller, Contained Content Cards --- */
+    
+    /* Re-introduce padding to sections to give cards breathing room */
+    .home-section, .reviews-section, .clients-section, .fleet-section, .team-section, .about-content {
+        padding: 40px 15px !important; 
+    }
+
+    /* Use grid for consistent (and smaller) spacing */
+    .home-grid, .section-grid, .events-grid, .team-grid, .fun-fleet-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important; /* REDUCED gap between cards */
+    }
+
+    /* New compact card style with subtle shadow */
+    .home-card,
+    .event-card,
+    .team-card,
+    .fun-fleet-card {
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+        border: 1px solid #eee !important;
+        max-height: 160px;
+    }
+    
+    /* REDUCE height of images within cards */
+    .home-card img,
+    .event-card img,
+    .team-card img {
+        height: 100% !important;
+    }
+    .fun-fleet-card img {
+         height: 180px !important;
+    }
+
+    /* REDUCE font sizes inside all cards */
+    .home-card-info h3, .vertical-card-content h3, .event-card .card-content h3, .team-info h3 {
+        font-size: 1.2rem !important;
+    }
+     .fun-card-info h3 {
+        font-size: 1.1rem !important;
+     }
+    .home-card-info p, .vertical-card-content p, .event-card .card-content p, .team-info p {
+        font-size: 0.9rem !important;
+    }
+
+    /* --- 3. General UI & Font Size Reduction --- */
+    
+    .section-heading h2 {
+        font-size: 1.8rem !important; /* REDUCED section title size */
+    }
+    .section-heading p {
+        font-size: 0.95rem !important;
+    }
+    
+    .discover-more-btn {
+        padding: 10px 20px !important; /* Smaller button */
+        font-size: 0.9rem !important;
+    }
+
+    /* --- 4. Compact Footer --- */
+    .footer-container {
+        gap: 20px !important; /* REDUCED space in footer */
+        padding: 30px 20px !important;
+    }
+
+    .footer-info p, .footer-contact-item a, .footer-bottom {
+        font-size: 0.8rem !important; /* REDUCED footer font size */
+    }
+    .footer-social h3 {
+        font-size: 1rem !important;
+    }
+    
+    /* --- 5. Kept Fixes --- */
+    .navbar .logo img {
+        height: 32px !important; /* Further reduced logo size */
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 !important; /* Remove padding to use section's padding */
+    }
+    .client-logo img {
+        max-width: 80px !important;
+    }
+    
+    /* Smaller mobile menu text */
+    .nav-links li a {
+       font-size: 1.3rem !important; 
+    }
+}
+
+/* --- CSS FOR RIGHT-TO-LEFT SLIDER --- */
+
+/* 1. The Main Container (The "Viewport") */
+.panels-container {
+    position: relative; /* Crucial for positioning the panels inside */
+    overflow: hidden;   /* Hides the panels that are off-screen */
+    height: 550px;      /* You can change this height */
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. The Individual Sliding Panels */
+.panel {
+    /* This must be absolute to allow sliding over each other */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Styles for the background image */
+    background-size: cover;
+    background-position: center;
+
+    /* This creates the smooth slide animation */
+    transition: transform 0.8s ease-in-out;
+
+    /* Optional: Styles for text if you add it inside the panel */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Aligns text to the bottom */
+    padding: 2rem;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* 3. The Animation Logic (The 3 States of a Panel) */
+
+/* Default state: All panels start off-screen to the RIGHT */
+.panel {
+    transform: translateX(100%);
+}
+
+/* This class is added by JavaScript to slide the panel INTO view */
+.panel.active {
+    transform: translateX(0);
+}
+
+/* This class is added by JavaScript to slide the old panel OUT of view to the LEFT */
+.panel.leaving {
+    transform: translateX(-100%);
 }
