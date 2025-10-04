@@ -288,6 +288,8 @@ body {
   flex: 0 0 auto;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
+  align-items: center;
+  justify-content: center;
 }
 
 .bento-box:hover {
@@ -299,7 +301,7 @@ body {
   font-style: italic;
   font-size: 1rem;
   color: #444;
-  margin-bottom: 15px;
+  
   position: relative;
   padding-left: 18px;
 }
@@ -316,6 +318,7 @@ body {
 .reviewer-info {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -901,7 +904,7 @@ section h2 {
 
 .vertical-card-content h3 {
  margin: 0 0 5px;
- font-size: 1.4rem;
+ font-size: 1.8rem;
  text-align: center;
  color: var(--primary-dark);
 }
@@ -2538,59 +2541,84 @@ body.dark-theme .theme-toggle {
     }
 }
 
-/* --- CSS FOR RIGHT-TO-LEFT SLIDER --- */
+/* //////////////////////////////////////////////// */
 
-/* 1. The Main Container (The "Viewport") */
-.panels-container {
-    position: relative; /* Crucial for positioning the panels inside */
-    overflow: hidden;   /* Hides the panels that are off-screen */
-    height: 550px;      /* You can change this height */
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.section-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: sans-serif;
 }
 
-/* 2. The Individual Sliding Panels */
-.panel {
-    /* This must be absolute to allow sliding over each other */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* The main carousel container that acts as the viewport. */
+.carousel {
+    /* 1. Use viewport width for a responsive size */
+    width: 95vw; /* Sets width to 90% of the screen's width */
+    max-width: 1000px; /* Sets a maximum size for large screens */
+
+    /* 2. Set height automatically based on width to maintain proportions */
+    aspect-ratio: 16 / 6;
+
+    margin-inline: auto;
+    position: relative; /* Needed for more complex layouts */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* The track that holds all the slides in a row. */
+.carousel-track {
+    display: flex;
     height: 100%;
-    
-    /* Styles for the background image */
+
+    /* 3. Set the track width to 500% because there are 5 slides */
+    width: 900%;
+
+    /* The animation remains the same */
+    animation: carousel-scroll 15s infinite ease-in-out;
+}
+
+/* Styling for each individual slide. */
+.carousel-slide {
+   width: 11.111111%;
     background-size: cover;
     background-position: center;
-
-    /* This creates the smooth slide animation */
-    transition: transform 0.8s ease-in-out;
-
-    /* Optional: Styles for text if you add it inside the panel */
+    flex-shrink: 0;
+    position: relative;
+    
+    /* These three lines will perfectly center the .mp-city div */
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Aligns text to the bottom */
-    padding: 2rem;
-    color: white;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    font-family: 'Playfair Display', serif;
+    align-items: center;
 }
+    
 
+/* Makes text pop */
+.mp-city {
+    font-family: 'Georgia', serif;
+    /* Made the text even bigger as it's the only element now */
+    font-size: clamp(2rem, 10vw, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    text-align: center; /* Good for names with multiple words */
 
-/* 3. The Animation Logic (The 3 States of a Panel) */
-
-/* Default state: All panels start off-screen to the RIGHT */
-.panel {
-    transform: translateX(100%);
+    /* The image fill effect */
+    background: rgba(253, 251, 251, 0.867);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
-
-/* This class is added by JavaScript to slide the panel INTO view */
-.panel.active {
-    transform: translateX(0);
-}
-
-/* This class is added by JavaScript to slide the old panel OUT of view to the LEFT */
-.panel.leaving {
-    transform: translateX(-100%);
+/* 5. The keyframes are updated to work with the new percentage-based widths. */
+@keyframes carousel-scroll {
+    0%, 9%   { transform: translateX(0%); }
+    11%, 20% { transform: translateX(-11.111111%); }
+    22%, 31% { transform: translateX(-22.222222%); }
+    33%, 42% { transform: translateX(-33.333333%); }
+    44%, 53% { transform: translateX(-44.444444%); }
+    55%, 64% { transform: translateX(-55.555555%); }
+    66%, 75% { transform: translateX(-66.666666%); }
+    77%, 86% { transform: translateX(-77.777777%); }
+    88%, 100% { transform: translateX(-88.888888%); } /* This is the 9th slide (the clone) */
 }

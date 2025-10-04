@@ -72,8 +72,9 @@ body {
 
 .contact-info p {
   margin-bottom: 15px;
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
 }
 
 .contact-info ul {
@@ -164,6 +165,8 @@ body {
 /* --- SOCIALS --- */
 .socials {
   margin-top: 25px;
+  text-align: center;
+  margin-left: 20px;
 }
 
 .socials a {
@@ -208,6 +211,7 @@ body {
   
   .hero2 p {
     font-size: 1.1rem;
+    text-align: center;
   }
 }
 

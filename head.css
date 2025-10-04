@@ -61,14 +61,15 @@
                 opacity var(--animation-duration) var(--smoother-timing);
 
     /* --- IMPROVEMENT: Styles to support turning cards into links <a> without layout shifts --- */
-   padding-top: 15%;
-   padding-right: 5%;
+   padding-top: 39%;
+   padding-right: 15%;
     color: #ffffff;
-    text-shadow: #dddddd;
+    text-shadow:rgba(255, 255, 255, 0.97);
     font-weight: 1000;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-decoration: none;
     cursor: pointer;
+    font-style: italic;
 }
 
 .footer.p{
@@ -76,16 +77,6 @@
     color: #ffffff;
 }
 
-/* --- CARD BACKGROUNDS --- */
-.card-holiday {
-    background-image: url('assets/images/yavor-punchev-EerfoqyC7aM-unsplash.jpg');
-}
-.card-event {
-    background-image: url('assets/images/beach.jpg');
-}
-.card-fleet {
-    background-image: url('assets/images/Artboard\ 1\ copy\ 14\ \(1\).jpg');
-}
 
 /* --- CARD STATES (IMPROVED for consistency and smoother motion) --- */
 .card.active {
@@ -120,7 +111,7 @@
     position: absolute;
     left: 3vw;
     /* --- IMPROVEMENT: Better positioning for full-screen layout --- */
-    bottom: 25vh;
+    bottom: 55vh;
     z-index: 2;
     color: #ffffffa6;
     text-align: left;
@@ -232,3 +223,7 @@
     user-select: none;
 }
 }
+
+
+
+
