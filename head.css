@@ -18,7 +18,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-size:contain; 
+    background-size:cover; 
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -159,7 +159,7 @@
 :root {
         --card-width: 200px;
         --card-height: 260px;
-        --card-spacing: 2vh;
+        --card-spacing: 1vh;
     }
 
     .slider-container{
@@ -173,7 +173,7 @@
     :root {
         --card-width: 240px;
         --card-height: 280px;
-        --card-spacing: 12vh;
+        --card-spacing: 10vh;
     }
 
     .slider-section {
