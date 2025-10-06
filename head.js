@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Fleets",
             cardImage: "url('assets/images/travalersAndBuses.jpg')", // Image for the small card
-            backgroundImage: "url('assets/images/Artboard 1 copy 14 (1).jpg')" // Image for the large background
+            backgroundImage: "url('assets/images/Travel.jpg')" // Image for the large background
         }
     ];
 
