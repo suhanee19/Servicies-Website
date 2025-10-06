@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Fleets",
-            cardImage: "url('assets/images/travalersAndBuses.jpg')", // Image for the small card
+            cardImage: "url('assets/images/2 car.jpg')", // Image for the small card
             backgroundImage: "url('assets/images/Travel.jpg')" // Image for the large background
         }
     ];

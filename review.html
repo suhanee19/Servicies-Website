@@ -9,174 +9,6 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* --- General & Reset Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #f8f9fa;
-            color: #333;
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        
-
-        /* --- Main Page Content --- */
-        .page-content {
-            padding: 60px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-heading h1, .section-heading h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #1d2b4a;
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* --- NEW Scrapbook Collage Style --- */
-        .client-collage-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 80px;
-            padding: 20px 0;
-        }
-        
-        .client-collage {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            width: 100%;
-            max-width: 900px; /* Constrain the size for a denser look */
-            height: 600px; /* Give the container a fixed height */
-            gap: 5px;
-        }
-
-        .client-collage img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 8px solid #fff;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
-            position: relative;
-            z-index: 1; /* Default stacking context */
-        }
-        
-        /* Hover effect to bring image to front and straighten it */
-        .client-collage img:hover {
-            transform: scale(1.15) rotate(0deg) !important; /* Override individual rotations */
-            box-shadow: 10px 10px 25px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        /* Individual positioning and rotation for each image */
-        .collage-img-1 {
-            grid-column: 1 / 3;
-            grid-row: 1 / 4;
-            transform: rotate(-8deg);
-        }
-        .collage-img-2 {
-            grid-column: 3 / 5;
-            grid-row: 1 / 3;
-            transform: rotate(5deg);
-            z-index: 2; /* Bring this one slightly forward by default */
-        }
-        .collage-img-3 {
-            grid-column: 5 / 7;
-            grid-row: 1 / 4;
-            transform: rotate(10deg);
-        }
-        .collage-img-4 {
-            grid-column: 1 / 4;
-            grid-row: 4 / 6;
-            transform: rotate(6deg);
-            z-index: 3;
-        }
-        .collage-img-5 {
-            grid-column: 4 / 7;
-            grid-row: 4 / 6;
-            transform: rotate(-6deg);
-        }
-        /* Hiding the 6th image from the previous design to create a more dynamic 5-photo layout */
-        .collage-img-6 {
-            display: none;
-        }
-        
-
-        /* --- Review Card Grid --- */
-        .review-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .review-card {
-            background-color: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; position: relative; overflow: hidden; border: 1px solid #e9ecef;
-        }
-        .review-card:hover {
-            transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-        }
-        .review-quote-icon {
-            font-size: 3rem; color: #007bff; position: absolute; top: 20px; left: 20px; opacity: 0.1;
-        }
-        .customer-info {
-            display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 2;
-        }
-        .customer-pic {
-            width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 3px solid #5cb85c;
-        }
-        .customer-name {
-            font-weight: 700; font-size: 1.3rem; color: #1d2b4a;
-        }
-        .review-rating {
-            color: #ffc107; margin-bottom: 15px; font-size: 1.1rem; position: relative; z-index: 2;
-        }
-        .review-rating .fa-star, .review-rating .fa-star-half-alt {
-            margin-right: 2px;
-        }
-        .review-text {
-            font-size: 1.05rem; color: #555; margin-bottom: 20px; font-style: italic; line-height: 1.6; position: relative; z-index: 2;
-        }
-        .review-source {
-            font-size: 0.9rem; font-weight: 600; color: #888; position: relative; z-index: 2;
-        }
-
-        /* --- Footer & WhatsApp --- */
-        footer {
-            background-color: #2a3a5b; color: #e0e0e0; padding: 40px 20px; text-align: center;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            .client-collage { height: 500px; }
-        }
-       
-        @media (max-width: 500px) {
-             .client-collage { display: flex; flex-direction: column; height: auto; }
-        }
-    </style>
 </head>
 <body>
   <header>
@@ -211,68 +43,111 @@
          </a>
      </nav>
  </header>
-
+<br><br><br><br>
     <main class="page-content">
         <div class="section-heading">
             <h1>Our Happy Clients</h1>
             <p>Real experiences from travelers who chose Happiness Plans for their adventures.</p>
         </div>
-        <div class="client-collage-container">
-            <div class="client-collage">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 1" class="collage-img-1">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 2" class="collage-img-2">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 3" class="collage-img-3">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 4" class="collage-img-4">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 5" class="collage-img-5">
-                <img src="assets/images/signapore.jpg" alt="Happy Client 6" class="collage-img-6">
-            </div>
+  <div class="client-collage-container">
+        <div class="client-collage">
+            <!-- Updated to 12 items -->
+            <div class="collage-item item-1"><img src="assets/images/people10.jpg" alt="Happy Client 1"></div>
+            <div class="collage-item item-2"><img src=" assets/images/people16.jpg"      alt="Happy Client 2"></div>
+            <div class="collage-item item-3"><img src=" assets/images/people15.jpg"      alt="Happy Client 3"></div>
+            <div class="collage-item item-4"><img src=" assets/images/people13.jpg"      alt="Happy Client 4"> </div>
+             <div class="collage-item item-5"><img src="assets/images/people8.jpg"  alt="Happy Client 5"></div>
+            <div class="collage-item item-6"><img src=" assets/images/people7.jpg"      alt="Happy Client 6"></div>
+            <div class="collage-item item-7"><img src=" assets/images/people6.jpg"      alt="Happy Client 7"></div>
+            <div class="collage-item item-8"><img src=" assets/images/people5.jpg"      alt="Happy Client 8"></div>
+            <div class="collage-item item-9"><img src=" assets/images/people4.jpg"    alt="Happy Client 9"></div>
+            <div class="collage-item item-10"><img src="assets/images/people3.jpg"  alt="Happy Client 10"></div>
+            <div class="collage-item item-11"><img src="assets/images/people2.jpg"  alt="Happy Client 11"></div>
+            <div class="collage-item item-12"><img src="assets/images/people1.jpg"  alt="Happy Client 12"></div>
+            <div class="collage-item item-13"><img src="assets/images/people9.jpg"  alt="Happy Client 13"></div>
+            <div class="collage-item item-14"><img src="assets/images/people12.jpg"  alt="Happy Client 14"></div>
+            <div class="collage-item item-15"><img src="assets/images/people17.jpg"  alt="Happy Client 15"></div>
+            <div class="collage-item item-16"><img src="assets/images/people18.jpg"  alt="Happy Client 16"></div>
+            <div class="collage-item item-17"><img src="assets/images/people11.jpg"  alt="Happy Client 17"></div>
+            <div class="collage-item item-18"><img src="assets/images/eventpic.jpg"  alt="Happy Client 18"></div>
         </div>
-        
+    </div>
 
-        <div class="section-heading">
-            <h2>Valued Testimonials</h2>
-            <p>— Hear directly from those who've journeyed with us —</p>
+<section class="reviews-section">
+  <div class="section-heading">
+    <h2>What Our Clients Say</h2>
+    <p>— Trusted by travelers worldwide —</p>
+  </div>
+
+  <div class="bento-slider">
+    <div class="bento-track">
+      <div class="bento-box">
+        <p class="review-quote">"Amazing service in Indore, Ujjain, and around. Booked SML Executive Bus 12 seater for 4 days and zero complaints. Highly recommend!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FFB6B9;">SA</div>
+          <h4>Sourav Acharya <span class="stars">★★★★★</span></h4>
         </div>
-        <div class="review-grid">
-            <div class="review-card">
-                <i class="fas fa-quote-right review-quote-icon"></i>
-                <div class="customer-info">
-                    <img src="https://via.placeholder.com/70x70/DEB887/FFFFFF?text=Jane" alt="Jane Doe" class="customer-pic">
-                    <span class="customer-name">Sourav Acharya</span>
-                </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="review-text">"Amazing service in Indore, Ujjain, and around. Booked SML Executive Bus 12 seater for 4 days and zero complaints. Highly recommend!"</p>
-            </div>
+      </div>
 
-            <div class="review-card">
-                <i class="fas fa-quote-right review-quote-icon"></i>
-                <div class="customer-info">
-                    <img src="https://via.placeholder.com/70x70/6495ED/FFFFFF?text=John" alt="John Smith" class="customer-pic">
-                    <span class="customer-name">Vandna Bhasaniya</span>
-                </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="review-text">"It was a great experience with Jehan Numa Retreat, Bhopal. Happiness Plans suggested this resort. Seamless check-in experience."</p>
-            </div>
-
-        
-            <div class="review-card">
-                <i class="fas fa-quote-right review-quote-icon"></i>
-                <div class="customer-info">
-                    <img src="https://via.placeholder.com/70x70/9FE2BF/FFFFFF?text=Emily" alt="Emily White" class="customer-pic">
-                    <span class="customer-name">Sumit Bohra</span>
-                </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="review-text">"We had a wonderful trip.Vehicle was very good and driver was also very polite and professional."</p>
-            </div>
+      <div class="bento-box">
+        <p class="review-quote">"We hired Urbania taxi service for 4 days. Driver courteous, taxi in excellent condition. I recommend the services to everyone."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#A0E7E5;">JA</div>
+          <h4>Dr Jatin Agarwal <span class="stars">★★★★★</span></h4>
         </div>
-    </main>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"A gorgeous and wonderful tour. All arrangements and guides were perfect. Will definitely be a customer again!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#B4F8C8;">VA</div>
+          <h4>Vineet Arora <span class="stars">★★★★☆</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"It was a great experience with Jehan Numa Retreat, Bhopal. Happiness Plans suggested this resort. Seamless check-in experience."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FBE7C6;">VB</div>
+          <h4>Vandna Bhasaniya <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <p class="review-quote">"Thank you so much Happiness Plans for our wonderful and hassle-free trip to Sikkim. Harshit supported us at each step."</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#D0BDF4;">NS</div>
+          <h4>Neetu Shivhare <span class="stars">★★★★★</span></h4>
+        </div>
+      </div> 
+      
+
+      <!-- duplicate first card for infinite scroll -->
+     
+      <div class="bento-box">
+        <p class="review-quote">"We had a wonderful trip.Vehicle was very good and driver was also very polite and professional.
+"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#d8ff64;">SB</div>
+          <h4>
+Sumit Bohra <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+      <div class="bento-box">
+        <p class="review-quote">"Amazing service in Indore, Ujjain, and around. Booked SML Executive Bus 12 seater for 4 days and zero complaints. Highly recommend!"</p>
+        <div class="reviewer-info">
+          <div class="avatar" style="background-color:#FFB6B9;">SA</div>
+          <h4>Sourav Acharya <span class="stars">★★★★★</span></h4>
+        </div>
+      </div>
+    
+  </div>
+</div>
 </section>
+        </div>
+        
+
+       
 <section class="events-section home-section">
       <div class="section-heading">
     <h2>Video Review</h2>
@@ -310,7 +185,41 @@
       </section>
    
     <footer>
-        <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+        
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Happiness Plans</h3>
+      <p>408, Apollo Premiere, Vijay Nagar, Indore,MP, India 452011</p>
+      <p>Email: sales@happinessplans.com   
+ Phone: +91 9109135533, +91 9109135503 </p>
+    
+    </div>
+
+    <div class="footer-social">
+           <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/happiness-plan/" target="_blank" class="linkedin">
+          <img src="assets/images/LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/happiness.plans" target="_blank" class="instagram">
+          <img src="assets/images/Logo Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/happinessplans" target="_blank" class="facebook">
+          <img src="assets/images/Facebook.png" alt="Facebook">
+        </a>
+        <a href="https://x.com/HappinessPlans" target="_blank" class="twitter">
+          <img src="assets/images/Icon.png" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/@happinessplansindore" target="_blank" class="twitter">
+          <img src="assets/images/Logo YouTube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Happiness Plans. All Rights Reserved.</p>
+  </div>
     </footer>
 
 
