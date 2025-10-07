@@ -2500,6 +2500,92 @@ body.dark-theme .theme-toggle {
 /* =================================================================== */
 
 
+/* --- Default styles for desktop --- */
+.video-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 20px;
+  justify-content: center; /* Centers the videos */
+  padding: 10px;
+}
+
+.video-container iframe {
+  max-width: 450px; /* Ensures videos don't get too large */
+  width: 100%;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+
+/* --- Mobile styles for the horizontal scroller --- */
+/* This media query applies styles only on screens 768px or narrower */
+@media (max-width: 768px) {
+  .video-container {
+    flex-wrap: nowrap;          /* Prevents videos from wrapping */
+    overflow-x: auto;         /* Enables horizontal scrolling */
+    justify-content: flex-start;  /* Aligns videos to the start */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory;   /* Optional: makes scrolling snap */
+  }
+
+  .video-container iframe {
+    flex: 0 0 90%; /* Prevents videos from shrinking, sets width to 90% of viewport */
+    scroll-snap-align: center; /* Optional: snaps video to the center */
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintains video aspect ratio */
+  }
+  
+  /* Optional: Hides the scrollbar for a cleaner look */
+  .video-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+ 
+
+/*  */
+
+
+/* ///////////yt vid/// */
+/* --- Default styles for desktop --- */
+.video-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 20px;
+  justify-content: center; /* Centers the videos */
+  padding: 10px;
+}
+
+.video-container iframe {
+  max-width: 450px; /* Ensures videos don't get too large */
+  width: 100%;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+
+/* --- Mobile styles for the horizontal scroller --- */
+/* This media query applies styles only on screens 768px or narrower */
+@media (max-width: 768px) {
+  .video-container {
+    flex-wrap: nowrap;          /* Prevents videos from wrapping */
+    overflow-x: auto;         /* Enables horizontal scrolling */
+    justify-content: flex-start;  /* Aligns videos to the start */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory;   /* Optional: makes scrolling snap */
+  }
+
+  .video-container iframe {
+    flex: 0 0 90%; /* Prevents videos from shrinking, sets width to 90% of viewport */
+    scroll-snap-align: center; /* Optional: snaps video to the center */
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintains video aspect ratio */
+  }
+  
+  /* Optional: Hides the scrollbar for a cleaner look */
+  .video-container::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 @media (max-width: 500px) {
     /* Adjustments for the smallest phones */
