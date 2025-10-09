@@ -1120,6 +1120,19 @@ section h2 {
     transform: translateY(-30px); /* Lifts the card up by 10px */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px var(--accent-teal); /* Adds a shadow and a teal glow */
 }
+
+.review-hero{
+     background: linear-gradient(rgba(92, 155, 238, 0.577), rgba(199, 213, 9, 0.473)), url('assets/images/munnar.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
 /* ------------------ Events Hero Section ------------------ */
 .events-hero {
     background: linear-gradient(rgba(155, 155, 245, 0.919), rgba(0, 153, 255, 0.6)), url('assets/images/beach.jpg') center/cover no-repeat;
@@ -1271,7 +1284,7 @@ section h2 {
             border-radius: 2px;
             max-height: 350px;
             overflow: hidden;
-            box-shadow: 0 4px D12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
@@ -1316,23 +1329,32 @@ section h2 {
             }
         }
 
-        /* Mobile Layout: 2 columns */
         @media (max-width: 600px) {
-            .header-section h1 {
-                font-size: 2rem;
-            }
-            .client-collage-container {
-                padding: 15px;
-            }
-            .client-collage {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            /* All items span 2 columns to create simple rows */
-            .collage-item {
-                grid-column: span 2 !important;
-            }
-        }
+
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    .client-collage-container {
+        padding: 15px;
+    }
+    .client-collage {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    /* --- NEW --- */
+    /* Create a more dynamic "web-like" pattern on mobile */
+    /* Make the 1st, 4th, 7th, etc., item full-width */
+    .collage-item:nth-child(3n + 1) {
+        grid-column: span 2;
+    }
+
+    /* Make the subsequent two items half-width */
+    .collage-item:nth-child(3n + 2),
+    .collage-item:nth-child(3n + 3) {
+        grid-column: span 1;
+    }
+}
 
         /* ///////image scoller */
 
@@ -2540,10 +2562,8 @@ body.dark-theme .theme-toggle {
     display: none;
   }
 }
- 
-
+events-hero
 /*  */
-
 
 /* ///////////yt vid/// */
 /* --- Default styles for desktop --- */
@@ -2604,7 +2624,7 @@ body.dark-theme .theme-toggle {
     /* --- 1. Compact Hero Sections --- */
     .travel-hero,
     .events-hero,
-    .fleet-hero,
+    .fleet-hero,.review-hero,
     .about-hero {
         height: 45vh !important; /* SIGNIFICANTLY REDUCED height */
         padding: 1rem !important;
@@ -2715,7 +2735,9 @@ body.dark-theme .theme-toggle {
     /* Smaller mobile menu text */
     .nav-links li a {
        font-size: 1.3rem !important; 
+
     }
+  
 }
 
 /* //////////////////////////////////////////////// */
@@ -2724,6 +2746,16 @@ body.dark-theme .theme-toggle {
     text-align: center;
     margin-bottom: 1rem;
     font-family: sans-serif;
+}
+
+@media (max-width: 400px){
+    .carousel{
+        max-width: 290px !important;
+    }
+    .mp-city{
+            font-size: clamp(1rem, 10vw, 6rem) !important;
+
+    }
 }
 
 /* The main carousel container that acts as the viewport. */
