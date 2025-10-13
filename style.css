@@ -11,20 +11,14 @@
 
 /* CSS */
 .logo {
-  width: 240px;
+  width: 200px;
   height: 60px;
-  background-image: url("assets/images/WebLOGO.png");
+  background-image: url("assets/images/LOGO.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Change for mobile */
-@media (max-width: 768px) {
-  .logo {
-    background-image: url("assets/images/LOGO.png");
-    width: 150px;
-  }
-}
+
 
 client-logo
 
@@ -565,7 +559,7 @@ footer {
     height: 69px;
     display: flex;
     align-items: center;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.385);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: none;
