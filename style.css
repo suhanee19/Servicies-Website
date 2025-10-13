@@ -8,9 +8,27 @@
     box-sizing: border-box;
     font-family: 'Playfair Display', serif;
 }
+
+/* CSS */
+.logo {
+  width: 240px;
+  height: 60px;
+  background-image: url("assets/images/WebLOGO.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Change for mobile */
+@media (max-width: 768px) {
+  .logo {
+    background-image: url("assets/images/LOGO.png");
+    width: 150px;
+  }
+}
+
 client-logo
 
-/* ...existing code... */
+
 .logo
 /* Remove or replace any other font-family declarations: */
 body,
@@ -53,10 +71,6 @@ body,
     --text-light: #7f8c8d; /* Muted text color */
 }
 /* Keep logo same in both light and dark themes */
-.logo img {
-    content: url('assets/images/LOGO.png');
-}
-
 body {
     background: var(--light-bg);
     color: var(--primary-dark);
