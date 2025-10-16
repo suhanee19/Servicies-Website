@@ -43,7 +43,13 @@
       "addressLocality": "Indore",
       "addressRegion": "Madhya Pradesh",
       "postalCode": "452011",
-      "addressCountry": "IN"
+      "addressCountry": "IN",
+      "price":"15000 INR",
+      "email": "info@happinessplans.com",
+      "telephone": "+91 9109135533",  
+      "priceCurrency": "INR",
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00",
+      "avalability": "https://schema.org/InStock"
     },
     "areaServed": ["Indore", "Madhya Pradesh", "India"],
     "sameAs": [
@@ -52,16 +58,50 @@
       "https://www.linkedin.com/company/happiness-plan/",
       "https://www.youtube.com/@happinessplansindore"
     ],
-    "serviceOffer": [
-      { "@type": "Service", "name": "Event Management" },
-      { "@type": "Service", "name": "Corporate & Wedding Events" },
-      { "@type": "Service", "name": "Fleet Rental & Car Hire" },
-      { "@type": "Service", "name": "Travel Planning & Packages" },
-      { "@type": "Service", "name": "Visa Assistance" },
-      { "@type": "Service", "name": "International Flight Booking" },
-      { "@type": "Service", "name": "Madhya Pradesh Tourism" }
+    
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services Offered",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "TouristTrip",
+          "name": "Domestic Tour Package"
+        },
+        "price": "15000",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "TouristTrip",
+          "name": "International Tour Package"
+        },
+        "price": "50000",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "EventReservation",
+          "name": "Event Management Services"
+        },
+        "price": "20000",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Vehicle",
+          "name": "Fleet Services"
+        },
+        "price": "10000",
+        "priceCurrency": "INR"
+      }
     ]
   }
+}
   <!-- Preconnect & DNS Prefetch (faster external loading) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
