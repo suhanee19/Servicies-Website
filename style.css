@@ -124,7 +124,7 @@ body {
 
 .home-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 20px;
     justify-content: center;
@@ -697,7 +697,7 @@ footer {
                  width: 100%; 
                  border-bottom: 1px solid #f0f0f090; }
             .nav-links > li > a::after { display: none; } /* Disable underline effect on mobile */
-            .nav-cta-button { display: none; }
+            
             .hamburger { display: block; }
 
             .dropdown .fa-chevron-down { display: inline-block; margin-left: auto; } /* Show dropdown arrows on mobile */
@@ -727,11 +727,12 @@ footer {
   list-style: none
   
 }
+
 .navbar-whatsapp {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #25d366;
+    background: #e4e9e6;
     color: #fff;
     padding: 6px 14px 6px 10px;
     border-radius: 22px;
@@ -754,7 +755,7 @@ footer {
 /* ================================================================
    FINAL - Responsive Floating WhatsApp Button
 ================================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     /* Target the correct button class: .nav-cta-button */
     .nav-cta-button {
         /* 1. Detach and position it */
@@ -807,9 +808,6 @@ background: linear-gradient(rgba(155, 155, 245, 0.488), rgba(0, 153, 255, 0.471)
  font-style: italic;
  text-shadow: 2px 2px 9px gray;
  animation: fadeIn 1.5s ease;
-
-
-
 }
 
 .travel-hero p {
@@ -1878,7 +1876,6 @@ section h2 {
         flex-direction: column;
     }
 }
-/* ------------------ FOOTER -----------------*/
 
 
 
@@ -1901,7 +1898,7 @@ section h2 {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .hamburger {
     display: flex;
   }
@@ -1925,7 +1922,7 @@ section h2 {
   }
 
   .nav-links li a {
-    color: #fff;
+    color: #120101;
     font-size: 1.2rem;
     text-decoration: none;
   }
@@ -1989,7 +1986,7 @@ body.dark-theme .theme-toggle {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     /* Main Layout Adjustments */
     .navbar {
         flex-wrap: wrap;
@@ -2148,10 +2145,7 @@ body.dark-theme .theme-toggle {
 /* --- Styles for tablets and phones (768px and smaller) --- */
 @media (max-width: 768px) {
 
-  /* 1. Make the logo smaller in the navbar */
-  .navbar .logo img {
-    height: 40px; /* Reduced from 50px */
-  }
+  
 
   /* 3. Add the fun animation to cards */
   /* This targets all cards within the main grid containers */
@@ -2374,7 +2368,7 @@ body.dark-theme .theme-toggle {
 }
 
 /* --- Styles for tablets and phones (1100px and smaller) --- */
-@media (max-width: 1100px) {
+@media (max-width: 600px) {
 
  /* Make the navbar transparent */
  .navbar {
@@ -2525,15 +2519,13 @@ body.dark-theme .theme-toggle {
 
 
 /* =================================================================== */
-/* ==== NEW "INSTAGRAM-STYLE" MOBILE OVERHAUL (Based on Video) ==== */
-/* ==== Replace your previous mobile CSS block with this one ==== */
 /* =================================================================== */
 
 
 /* --- Default styles for desktop --- */
 .video-container {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  flex-wrap: nowrap;
   gap: 20px;
   justify-content: center; /* Centers the videos */
   padding: 10px;
@@ -2544,11 +2536,20 @@ body.dark-theme .theme-toggle {
   width: 100%;
   border-radius: 8px; /* Optional: adds rounded corners */
 }
-
-
+@media (max-width: 1300px) {
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 !important; /* Remove padding to use section's padding */
+    }
+    .client-logo img {
+        max-width: 90px !important;
+    }
+}
 /* --- Mobile styles for the horizontal scroller --- */
 /* This media query applies styles only on screens 768px or narrower */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+    
   .video-container {
     flex-wrap: nowrap;          /* Prevents videos from wrapping */
     overflow-x: auto;         /* Enables horizontal scrolling */
@@ -2570,50 +2571,7 @@ body.dark-theme .theme-toggle {
     display: none;
   }
 }
-events-hero
-/*  */
 
-/* ///////////yt vid/// */
-/* --- Default styles for desktop --- */
-.video-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  gap: 20px;
-  justify-content: center; /* Centers the videos */
-  padding: 10px;
-}
-
-.video-container iframe {
-  max-width: 450px; /* Ensures videos don't get too large */
-  width: 100%;
-  border-radius: 8px; /* Optional: adds rounded corners */
-}
-
-
-/* --- Mobile styles for the horizontal scroller --- */
-/* This media query applies styles only on screens 768px or narrower */
-@media (max-width: 768px) {
-  .video-container {
-    flex-wrap: nowrap;          /* Prevents videos from wrapping */
-    overflow-x: auto;         /* Enables horizontal scrolling */
-    justify-content: flex-start;  /* Aligns videos to the start */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scroll-snap-type: x mandatory;   /* Optional: makes scrolling snap */
-  }
-
-  .video-container iframe {
-    flex: 0 0 90%; /* Prevents videos from shrinking, sets width to 90% of viewport */
-    scroll-snap-align: center; /* Optional: snaps video to the center */
-    width: 90%;
-    height: auto;
-    aspect-ratio: 16 / 9; /* Maintains video aspect ratio */
-  }
-  
-  /* Optional: Hides the scrollbar for a cleaner look */
-  .video-container::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 @media (max-width: 500px) {
     /* Adjustments for the smallest phones */
@@ -2656,7 +2614,6 @@ events-hero
 
     /* --- 2. Smaller, Contained Content Cards --- */
     
-    /* Re-introduce padding to sections to give cards breathing room */
     .home-section, .reviews-section, .clients-section, .fleet-section, .team-section, .about-content {
         padding: 40px 15px !important; 
     }
@@ -2837,4 +2794,44 @@ events-hero
     66%, 75% { transform: translateX(-66.666666%); }
     77%, 86% { transform: translateX(-77.777777%); }
     88%, 100% { transform: translateX(-88.888888%); } /* This is the 9th slide (the clone) */
+}
+.downloads {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.download-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.download-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.download-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.download-card a {
+    display: inline-block;
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.download-card a:hover {
+    background-color: #d35400;
 }
