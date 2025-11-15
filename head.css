@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+
 :root {
     --card-width: 220px;
     --card-height: 300px;
@@ -155,90 +156,65 @@
     /* --- RESTORED: Brought back your original 3D transform --- */
     transform: translateY(30px) scale(1) perspective(500px) rotateX(10deg);
 }
+/* --- RESPONSIVE ADJUSTMENTS --- */
 
-@media(max-width: 1202px) { 
-:root {
-        --card-width: 200px;
-        --card-height: 260px;
-        --card-spacing: 1vh;
-    }
 
-    .slider-container{
-        margin-left: 55vh;
-    }
-   
+/* ------------------- TABLETS = MOBILE MODE (600px–1000px) ------------------- */
+@media (min-width: 600px) and (max-width: 1100px) {
 
-}
-/* --- RESPONSIVE CODE --- */
-@media (min-width: 601px) and (max-width: 1002px) {
-    :root {
-        --card-width: 240px;
-        --card-height: 280px;
-        --card-spacing: 10vh;
-    }
-
-    .slider-section {
-        /* --- FIX: Maintain full-screen on tablets --- */
-        height: 100vh;
-    }
-
-    .slider-container {
-        padding-left: 0;
-        width: 100%;
-        padding: 0 20px;
-    }
-    
-    .background-card-text {
-        left: 5vw;
-        bottom: auto;
-        top: 8vh;
-        margin-bottom: 0;
-    }
-
-    .background-card-text .card-title {
-        font-size: 4.5rem;
-    }
-}
-
-@media (max-width: 601px) {
+    /* Hide cards (same as mobile) */
     .slider-container {
         display: none;
     }
+
+    /* Smaller hero area like mobile */
     .slider-section {
-    position: relative;
-    /* --- FIX: Corrected width and made layout full-screen --- */
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        height: 45vh;
+    }
+
+    /* Mobile-style title on tablets */
+    .background-card-text .card-title {
+        font-size: 2.5rem;
+        font-family: 'Abril Fatface', serif;
+    }
+
+    .background-card-text {
+        bottom: 4vh;
+        left: 5vw;
+        font-size: 1rem;
+    }
+}
+/* ------------------- MOBILE LAYOUT (below 600px) ------------------- */
+@media (max-width: 600px) {
+    .slider-container { display: none; }
+    .slider-section { height: 40vh; }
+    .background-card-text .card-title { font-size: 2rem; }
 }
 
-.background-card-text .card-title {
-    font-size: 2rem;
-    font-weight: bold;
-    font-style: italic;
-    font-family: 'Abril Fatface', serif; /* Corrected font name */
-    text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
-    color: #ffffff;
+/* ------------------- DESKTOP LAYOUT ADJUSTMENTS (1000px and up) ------------------- */
+/* Small laptops (1100px–1280px) */
+@media (min-width: 1100px) and (max-width: 1280px) {
+    .slider-container {
+        margin-left: 15vw;
+        /* cleaner dynamic alignment */
+        margin-left: calc(100vw - (4* var(--card-width)));
+    }
 }
 
-.background-card-text {
-    position: absolute;
-    left: 3vw;
-    /* --- IMPROVEMENT: Better positioning for full-screen layout --- */
-    bottom: 2vh;
-    z-index: 2;
-    color: #ffffffa6;
-    text-align: left;
-    pointer-events: none;
-    width: auto;
-    font-size: 1rem;
-    user-select: none;
-}
+/* Medium laptops (1280px–1600px) — your original look */
+@media (min-width: 1280px) and (max-width: 1600px) {
+    .slider-container {
+        margin-left: 26vw;
+        /* formula version for perfect half-card */
+        margin-left: calc(100vw - (4 * var(--card-width)));
+    }
 }
 
-
-
-
+/* Large laptops (1600px+) */
+@media (min-width: 1600px) {
+    .slider-container {
+        margin-left: 40vw;
+        /* dynamic version so spacing stays consistent */
+        margin-left: calc(100vw - (4* var(--card-width)));
+    }
+}
